@@ -23,10 +23,20 @@ uplaodImg.addEventListener("change", (e) => {
   console.log(imgSrc);
 });
 
+const getBase64Image = (img) => {
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0, img.width, img.height);
+  const dataURL = canvas.toDataURL("image/png");
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+};
+
 const postItems = (e) => {
   e.preventDefault();
   const itemDetails = {
-    itemImage: preview.src,
+    itemImage: getBase64Image(preview),
     productName: productName.value,
     price: price.value,
     quantity: quantity.value,
@@ -36,23 +46,3 @@ const postItems = (e) => {
   localStorage.setItem("product", JSON.stringify(productDetails));
 };
 submitBtn.addEventListener("click", postItems);
-
-// products
-// let display = document.getElementById("display");
-
-// // const productDetails = JSON.parse(localStorage.getItem("product")) || [];
-
-// const populateDetails = (productDetails) => {
-//   display.innerHTML = productDetails.map((item, i) => {
-//     return ` <div class="card-con" data-index=${i} >
-//         <div class="card-img"><img class="cardImage" src=${item.itemImage} /></div>
-//         <div class="card-details">
-//           <h2>${item.productName}</h2>
-//           <h4>${item.price}</h4>
-//           <h5>${item.quantity}</h5>
-//           <p>${item.discription}</p>
-//         </div>
-//       </div>`;
-//   });
-// };
-// populateDetails(productDetails);

@@ -7,7 +7,9 @@ const populateDetails = (productDetails) => {
   cardMain.innerHTML = productDetails.map((item, i) => {
     console.log(item.itemImage);
     return ` <div class="card-con" data-index=${i} >
-        <div class="card-img"><img class="cardImage" src=${item.itemImage} /></div>
+        <div class="card-img"><img class="cardImage" src=${
+          "data:image/png;base64," + item.itemImage
+        } /></div>
         <div class="card-details">
           <h2>${item.productName}</h2>
           <h4>${item.price}</h4>
@@ -16,6 +18,5 @@ const populateDetails = (productDetails) => {
         </div>
       </div>`;
   });
-    
 };
 populateDetails(productDetails);
