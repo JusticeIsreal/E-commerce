@@ -1,5 +1,5 @@
 main {
-  border: 2px solid red;
+  // border: 2px solid red;
 
   form {
     padding-left: 20px;
@@ -24,14 +24,50 @@ main {
     input {
       height: 30px;
     }
-    button {
+
+    #addBtn {
       margin-top: 10px;
+      border: 2px solid red;
+    }
+  }
+
+
+
+
+  .table-con {
+    border: 4px solid green;
+    .table {
+      border: 2px solid red;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+      th {
+        border: 2px solid red;
+      }
+    }
+    #display {
+      border: 1px solid red;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+
+      tr {
+        td {
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          border: 1px solid black;
+          img {
+            width: 50px;
+          }
+        }
+      }
     }
   }
 }
-
-.card  {
-  border: 2px solid green;
+// product page
+.card {
+  // border: 2px solid green;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -40,32 +76,71 @@ main {
   gap: 50px;
 
   .card-con {
-    border: 2px solid red;
-    padding: 5px;
+    border: 1px solid black;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 500px;
+    // height: 500px;
     gap: 5px;
     width: 300px;
 
     .card-img {
       border: 2px solid black;
-      width: 300px;
+      width: 100%;
       // height: 450px;
       object-fit: contain;
-      
 
-      .cardImage{
+      .cardImage {
         width: 100%;
         height: 100%;
       }
     }
     .card-details {
-      // border: 2px solid blue;
-      height: 200px;
+      // justify-content: center;
+      // align-items: center;
+      text-align: center;
+      //  border: 2px solid blue;
+      // height: 200px;
       width: 100%;
+
+      .btn {
+        
+        #addBtn {
+          width: 100%;
+          border: 2px solid red;
+        }
+      }
+    }
+  }
+}
+.cart {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .cart-con {
+    border: 2px solid green;
+    display: flex;
+    gap: 10px;
+
+    .cart-img {
+      border: 2px solid red;
+      width: 50%;
+    }
+    .cart-details {
+      width: 50%;
+    }
+    .btn {
+      // border: 2px solid green;
+      margin: auto 0;
+      margin-right: 2px;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }

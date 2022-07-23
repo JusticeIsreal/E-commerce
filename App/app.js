@@ -46,3 +46,23 @@ const postItems = (e) => {
   localStorage.setItem("product", JSON.stringify(productDetails));
 };
 submitBtn.addEventListener("click", postItems);
+
+let display = document.getElementById("display");
+
+// products
+let cardMain = document.getElementById("cardmain");
+
+const populateDetails = (productDetails) => {
+  display.innerHTML = productDetails.map((item, i) => {
+    // console.log(item.itemImage);
+    return ` <tr>
+      <td><img class="cardImage" src=${
+        "data:image/png;base64," + item.itemImage
+      } /></td>
+          <td>${item.productName}</td>
+          <td>${item.price}</td>
+          <td>${item.quantity}</td>
+          <td>${item.discription}</td> </tr>`;
+  });
+};
+populateDetails(productDetails);

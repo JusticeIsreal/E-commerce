@@ -9,6 +9,7 @@
   <body>
     <main class="form-main">
       <a href="/Pages/product.html">PRODUCT</a>
+      <a href="/Pages/cart.html">CART</a>
       <form action="" class="form" id="form-con">
         <div class="image-preview" id="preview-con">
           <img src="" alt="" id="preview" />
@@ -36,7 +37,23 @@
         <button type="submit" id="submit-btn">POST ITEM</button>
       </form>
 
-      <div id="display"></div>
+      <div class="table-con">
+        <table class="table">
+          <tr>
+            <th >Product Image</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Product Discription</th>
+          </tr>
+        </table>
+        <table id="display">
+          <!-- <td>Product Image</td>
+          <td>Product Name</td>
+          <td>Product Price</td>
+          <td>Product Discription</td> -->
+        </table>
+      </div>
     </main>
 
     <script src="/App/app.js"></script>
