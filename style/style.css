@@ -1,54 +1,402 @@
-main form {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:wght@300&family=Source+Code+Pro:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: poppins;
+}
+
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: royalblue;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border: 2px solid blue;
+  overflow: hidden;
+}
+main nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid red;
+  height: 100vh;
+  width: 42%;
+  max-width: 42%;
+  min-width: 42%;
+  padding: 30px 10px;
+  z-index: 20;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  transition: 0.5s ease;
+  background-color: #fff;
+}
+@media only screen and (min-width: 850px) {
+  main nav {
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-bottom: auto;
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
+  }
+}
+main nav.open {
+  left: 0;
+}
+@media only screen and (min-width: 850px) {
+  main nav {
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+    margin-left: 0;
+    z-index: 0;
+  }
+}
+main nav .profile {
+  position: relative;
+  padding: 0 0 25px 0;
+  border-bottom: 1px solid royalblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid red;
+}
+main nav .profile .profile-pic-con {
+  border: 2px solid royalblue;
+  position: relative;
+  border-radius: 100%;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  border: 2px solid blue;
+}
+@media only screen and (min-width: 850px) {
+  main nav .profile .profile-pic-con {
+    width: 80px;
+    height: 80px;
+  }
+}
+main nav .profile .profile-pic-con i {
+  font-size: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  background-color: rgba(65, 105, 225, 0.54);
+  border-radius: 100%;
+  padding: 5px;
+}
+main nav .profile .profile-pic-con i:hover {
+  background-color: rgba(65, 105, 225, 0.259);
+}
+main nav .profile .profile-pic-con img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid red;
+}
+main nav .profile h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(68, 68, 68);
+  font-size: 10px;
+  width: 98%;
+  padding-top: 5px;
+}
+@media only screen and (min-width: 850px) {
+  main nav .profile h4 {
+    font-size: 15px;
+  }
+}
+main nav .profile p,
+main nav .profile span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(68, 68, 68);
+  font-size: 10px;
+  width: 98%;
+  padding-top: 5px;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 850px) {
+  main nav .profile p,
+main nav .profile span {
+    font-size: 15px;
+  }
+}
+main nav .profile b {
+  color: royalblue;
+}
+main nav ul {
+  width: 100%;
+}
+@media only screen and (min-width: 850px) {
+  main nav ul {
+    padding: 0 15px;
+  }
+}
+main nav ul li {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.3s ease-out;
+}
+@media only screen and (min-width: 850px) {
+  main nav ul li {
+    padding: 0 10px;
+  }
+}
+main nav ul li.active {
+  background-color: whitesmoke;
+  border: 1px solid rgb(214, 214, 214);
+}
+main nav ul li.active::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  transform: translateY(50%);
+  left: -3px;
+  width: 6px;
+  height: 75%;
+  border-radius: 10px;
+  background-color: royalblue;
+}
+main nav ul li:hover {
+  background-color: whitesmoke;
+}
+main nav ul li a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  color: rgb(68, 68, 68);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+main nav ul li a:hover {
+  color: #444444;
+  font-weight: 600;
+}
+main nav ul li a h3 {
+  font-weight: 400;
+  font-size: 12px;
+}
+@media only screen and (max-width: 300px) {
+  main nav ul li a h3 {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 850px) {
+  main nav ul li a h3 {
+    font-weight: 500;
+    font-size: 15px;
+  }
+}
+main nav ul li a i {
+  padding: 0 8px 0 8px;
+}
+@media only screen and (min-width: 850px) {
+  main nav ul li a i {
+    padding: 0 10px 0 0;
+  }
+}
+main .form-section {
+  border: 2px solid green;
+  overflow: scroll;
+  height: 100vh;
+}
+main .form-section .navbarTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  padding: 0 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: whitesmoke;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  z-index: 10;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop {
+    height: 70px;
+    padding: 0 20px;
+  }
+}
+main .form-section .navbarTop h3 {
+  font-size: 20px;
+  color: rgb(68, 68, 68);
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop h3 {
+    font-size: 30px;
+  }
+}
+main .form-section .navbarTop .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: whitesmoke;
+  width: 400px;
+  padding: 0 5px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
+  display: none;
+}
+main .form-section .navbarTop .search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0 10px;
+  background-color: transparent;
+}
+main .form-section .navbarTop .search i {
+  font-size: 22px;
+  color: #444444;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop .search {
+    display: flex;
+  }
+}
+main .form-section .navbarTop .profile-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+main .form-section .navbarTop .profile-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  margin-right: 20px;
+  position: relative;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop .profile-img img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+}
+main .form-section .navbarTop .profile-img .notification-bell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  font-size: 18px;
+  border-radius: 100%;
+  color: rgb(68, 68, 68);
+  background-color: whitesmoke;
+  width: 20px;
+  height: 20px;
+  right: 70px;
+  top: 5px;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop .profile-img .notification-bell {
+    right: 30px;
+  }
+}
+main .form-section .navbarTop .profile-img .bx-menu {
+  font-size: 40px;
+  transition: 0.3s linear;
+  color: rgb(68, 68, 68);
+}
+main .form-section .navbarTop .profile-img .bx-menu.rotate {
+  transform: rotate(-90deg);
+  color: royalblue;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .navbarTop .profile-img .bx-menu {
+    display: none;
+  }
+}
+main .form-section form {
   padding-left: 20px;
 }
-main form .image-preview {
+main .form-section form .image-preview {
   border: 1px solid black;
   width: 300px;
   height: 300px;
   margin-top: 10px;
 }
-main form .image-preview #preview {
+main .form-section form .image-preview #preview {
   width: 100%;
   height: 100%;
 }
-main form input,
-main form textarea {
+main .form-section form input,
+main .form-section form textarea {
   margin-top: 30px;
   display: block;
   width: 300px;
 }
-main form input {
+main .form-section form input {
   height: 30px;
 }
-main form #addBtn {
+main .form-section form #addBtn {
   margin-top: 10px;
   border: 2px solid red;
 }
-main .table-con {
+main .form-section .table-con {
   border: 4px solid green;
 }
-main .table-con .table {
+main .form-section .table-con .table {
   border: 2px solid red;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
-main .table-con .table th {
+main .form-section .table-con .table th {
   border: 2px solid red;
 }
-main .table-con #display {
+main .form-section .table-con #display {
   border: 1px solid red;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
-main .table-con #display tr td {
+main .form-section .table-con #display tr td {
   justify-content: center;
   align-items: center;
   text-align: center;
   border: 1px solid black;
 }
-main .table-con #display tr td img {
+main .form-section .table-con #display tr td img {
   width: 50px;
 }
 

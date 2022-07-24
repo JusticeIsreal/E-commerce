@@ -1,64 +1,445 @@
-main {
-  // border: 2px solid red;
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:wght@300&family=Source+Code+Pro:wght@300&display=swap");
 
-  form {
-    padding-left: 20px;
+// global variables
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: poppins;
+}
 
-    .image-preview {
-      border: 1px solid black;
-      width: 300px;
-      height: 300px;
-      margin-top: 10px;
-      #preview {
-        width: 100%;
-        height: 100%;
-      }
-    }
+*::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 0.1rem;
+}
 
-    input,
-    textarea {
-      margin-top: 30px;
-      display: block;
-      width: 300px;
-    }
-    input {
-      height: 30px;
-    }
+*::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
 
-    #addBtn {
-      margin-top: 10px;
-      border: 2px solid red;
+*::-webkit-scrollbar-thumb {
+  background-color: royalblue;
+}
+
+$shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
+$border: 1px solid rgb(214, 214, 214);
+$cardsj-bg: whitesmoke;
+$hover-Color: whitesmoke;
+$hover-Text-Color: #444444;
+$text-Color: rgb(68, 68, 68);
+$special-text-Color: royalblue;
+$special-Color: #4c5eff;
+
+
+@mixin flexDisplay($justifyProp, $alignProp, $flexDirection) {
+  display: flex;
+  justify-content: $justifyProp;
+  align-items: $alignProp;
+  flex-direction: $flexDirection;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint==smallPhone {
+    @media only screen and (max-width: 300px) {
+      @content;
     }
   }
 
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 850px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint==bigphone {
+    @media only screen and (min-width: 800px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+  }
+}
 
-  .table-con {
-    border: 4px solid green;
-    .table {
+// PROJECTS BEGINS
+
+main {
+  @include flexDisplay(space-around, center, row);
+  border: 2px solid blue;
+  overflow: hidden;
+
+  //       @include responsive(tablet) {
+  //         width: 250px;
+  //         height: 250px;
+  //       }
+  // LEFT SIDE NAVBAR
+  nav {
+    @include flexDisplay(space-between, center, column);
+    border: 2px solid red;
+    height: 100vh;
+    width: 42%;
+    max-width: 42%;
+    min-width: 42%;
+    padding: 30px 10px;
+    z-index: 20;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    transition: 0.5s ease;
+    background-color: #fff;
+
+    @include responsive(tablet) {
+      position: relative;
+      position: sticky;
+      margin-bottom: auto;
+      box-shadow: $shadow;
+    }
+
+    &.open {
+      left: 0;
+    }
+
+    @include responsive(tablet) {
+      width: 300px;
+      max-width: 300px;
+      min-width: 300px;
+      margin-left: 0;
+      z-index: 0;
+    }
+
+    .profile {
+      position: relative;
+      // width: 100%;
+      padding: 0 0 25px 0;
+      border-bottom: 1px solid $special-text-Color;
+      @include flexDisplay(space-between, center, column);
       border: 2px solid red;
-      border-collapse: collapse;
-      table-layout: fixed;
+
+      .profile-pic-con {
+        border: 2px solid $special-text-Color;
+        position: relative;
+        border-radius: 100%;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        border: 2px solid blue;
+
+        @include responsive(tablet) {
+          width: 80px;
+          height: 80px;
+        }
+
+        i {
+          font-size: 25px;
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          background-color: rgba(65, 105, 225, 0.54);
+          border-radius: 100%;
+          padding: 5px;
+
+          &:hover {
+            background-color: rgba(65, 105, 225, 0.259);
+          }
+        }
+
+        img {
+          object-fit: cover;
+          // width: 115px;
+          // height: 115px;
+          border-radius: 100%;
+          border: 2px solid red;
+
+          // @include responsive(tablet) {
+          //   width: 245px;
+          //   height: 245px;
+          // }
+        }
+      }
+
+      h4 {
+        @include flexDisplay(space-between, center, column);
+        color: $text-Color;
+        font-size: 10px;
+        width: 98%;
+        padding-top: 5px;
+
+        @include responsive(tablet) {
+          font-size: 15px;
+        }
+      }
+
+      p,
+      span {
+        @include flexDisplay(space-between, center, column);
+        color: $text-Color;
+        font-size: 10px;
+        width: 98%;
+        padding-top: 5px;
+        letter-spacing: 1px;
+
+        @include responsive(tablet) {
+          font-size: 15px;
+        }
+      }
+
+      b {
+        color: $special-text-Color;
+      }
+    }
+
+    ul {
       width: 100%;
-      th {
+
+      @include responsive(tablet) {
+        padding: 0 15px;
+      }
+
+      li {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 40px;
+        border-radius: 5px;
+        position: relative;
+        transition: 0.3s ease-out;
+
+        @include responsive(tablet) {
+          padding: 0 10px;
+        }
+
+        // toggle feature for mobile view
+        &.active {
+          background-color: whitesmoke;
+          border: $border;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -25%;
+            transform: translateY(50%);
+            left: -3px;
+            width: 6px;
+            height: 75%;
+            border-radius: 10px;
+            background-color: $special-text-Color;
+          }
+        }
+
+        &:hover {
+          background-color: $hover-Color;
+        }
+
+        a {
+          @include flexDisplay(flex-start, center, row);
+          color: $text-Color;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+
+          &:hover {
+            color: $hover-Text-Color;
+            font-weight: 600;
+          }
+
+          h3 {
+            font-weight: 400;
+            font-size: 12px;
+
+            @include responsive(smallPhone) {
+              font-size: 10px;
+            }
+
+            @include responsive(tablet) {
+              font-weight: 500;
+              font-size: 15px;
+            }
+          }
+
+          i {
+            padding: 0 8px 0 8px;
+
+            @include responsive(tablet) {
+              padding: 0 10px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-section {
+    border: 2px solid green;
+    overflow: scroll;
+    height: 100vh;
+
+
+     // top nav section
+    .navbarTop {
+      @include flexDisplay(space-between, center, row);
+      width: 100%;
+      height: 70px;
+      padding: 0 10px;
+      position: sticky;
+      top: 0;
+      background: $cardsj-bg;
+      border-bottom: $border;
+      z-index: 10;
+      box-shadow: $shadow;
+
+      @include responsive(tablet) {
+        height: 70px;
+        padding: 0 20px;
+      }
+
+      h3 {
+        font-size: 20px;
+        color: $text-Color;
+
+        @include responsive(tablet) {
+          font-size: 30px;
+        }
+      }
+
+      .search {
+        @include flexDisplay(center, center, row);
+        background-color: $cardsj-bg;
+        width: 400px;
+        padding: 0 5px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid rgb(221, 221, 221);
+        box-shadow: $shadow;
+        display: none;
+
+        input {
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 0 10px;
+          background-color: transparent;
+        }
+
+        i {
+          font-size: 22px;
+          color: $hover-Text-Color;
+        }
+
+        @include responsive(tablet) {
+          display: flex;
+        }
+      }
+
+      .profile-img {
+        @include flexDisplay(space-between, center, row);
+
+        img {
+          object-fit: cover;
+          border-radius: 100%;
+          width: 45px;
+          height: 45px;
+          margin-right: 20px;
+          position: relative;
+
+          @include responsive(tablet) {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+          }
+        }
+
+        .notification-bell {
+          @include flexDisplay(center, center, row);
+          position: absolute;
+          font-size: 18px;
+          border-radius: 100%;
+          color: $text-Color;
+          background-color: $cardsj-bg;
+          width: 20px;
+          height: 20px;
+          right: 70px;
+          top: 5px;
+
+          @include responsive(tablet) {
+            right: 30px;
+          }
+        }
+
+        .bx-menu {
+          font-size: 40px;
+          transition: 0.3s linear;
+          color: $text-Color;
+
+          &.rotate {
+            transform: rotate(-90deg);
+            color: $special-text-Color;
+          }
+
+          @include responsive(tablet) {
+            display: none;
+          }
+        }
+      }
+    }
+    form {
+      padding-left: 20px;
+
+      .image-preview {
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+        margin-top: 10px;
+        #preview {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      input,
+      textarea {
+        margin-top: 30px;
+        display: block;
+        width: 300px;
+      }
+      input {
+        height: 30px;
+      }
+
+      #addBtn {
+        margin-top: 10px;
         border: 2px solid red;
       }
     }
-    #display {
-      border: 1px solid red;
-      border-collapse: collapse;
-      table-layout: fixed;
-      width: 100%;
+    .table-con {
+      border: 4px solid green;
+      .table {
+        border: 2px solid red;
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
+        th {
+          border: 2px solid red;
+        }
+      }
+      #display {
+        border: 1px solid red;
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 100%;
 
-      tr {
-        td {
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          border: 1px solid black;
-          img {
-            width: 50px;
+        tr {
+          td {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid black;
+            img {
+              width: 50px;
+            }
           }
         }
       }
@@ -106,7 +487,6 @@ main {
       width: 100%;
 
       .btn {
-        
         #addBtn {
           width: 100%;
           border: 2px solid red;
@@ -128,7 +508,7 @@ main {
     .cart-img {
       border: 2px solid red;
       width: 50%;
-      img{
+      img {
         width: 100%;
       }
     }

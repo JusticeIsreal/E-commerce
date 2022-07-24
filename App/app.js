@@ -63,7 +63,7 @@ const postItems = (e) => {
     });
     localStorage.removeItem("update")
   } else {
-    productDetails.push(itemDetails);
+    productDetails.unshift(itemDetails);
   }
   localStorage.setItem("product", JSON.stringify(productDetails));
   location.reload();
@@ -118,3 +118,34 @@ editTableRow.forEach((ite, index) => {
     editTableItem(e.target, index);
   });
 });
+
+
+// function to toggle side nav for tablet and mobile view
+let sideNav = document.querySelector(".sidebar-left");
+let menuBtn = document.querySelector(".bx-menu");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("rotate");
+  sideNav.classList.toggle("open");
+ 
+});
+
+let profileChange = document.querySelector(".update-profile");
+let infoCon = document.querySelector(".change-info");
+
+profileChange.addEventListener("click", () => {
+  infoCon.classList.toggle("update");
+
+});
+
+let settingbtn = document.querySelector(".settingbtn")
+let settingpage = document.querySelector(".setting-page")
+let headhome =document.querySelector(".headhome")
+
+headhome.addEventListener('click', () => {
+  settingpage.classList.remove("showsetting")
+})
+settingbtn.addEventListener('click', () => {
+   sideNav.classList.remove("open");
+  settingpage.classList.toggle("showsetting")
+})

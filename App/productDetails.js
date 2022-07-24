@@ -32,7 +32,7 @@ let cartCount = document.getElementById("cart-count");
 cartCount.innerHTML = cartDetails.length;
 addCart.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    cartDetails.push(productDetails[index]);
+    cartDetails.unshift(productDetails[index]);
     localStorage.setItem("cart", JSON.stringify(cartDetails));
     cartCount.innerHTML = cartDetails.length;
   });

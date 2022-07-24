@@ -3,58 +3,142 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style/style.css" />
     <title>E Com</title>
   </head>
   <body>
     <main class="form-main">
-      <a href="/Pages/product.html">PRODUCT</a>
-      <a href="/Pages/cart.html">CART</a>
-      <form action="" class="form" id="form-con">
-        <div class="image-preview" id="preview-con">
-          <img src="" alt="" id="preview" />
+      <!-- SIDE NAV BAR -->
+      <nav class="sidebar-left">
+        <div class="profile">
+          <div class="profile-pic-con">
+            <i class="bx bx-pencil update-profile"></i>
+            <img src="" alt="" />
+          </div>
+          <h4>Justice Isreal Agbonma</h4>
+          <span>Position : <b>CEO</b> </span>
+          <p>Justiceyba@gmail.com</p>
         </div>
-        <input type="file" id="uplaod-img" />
+        <ul>
+          <li>
+            <a>
+              <i class="bx bxs-report"></i>
+              <h3>Orders</h3>
+            </a>
+          </li>
+          <li class="settingbtn">
+            <a>
+              <i class="bx bx-terminal"></i>
+              <h3>Clients</h3>
+            </a>
+          </li>
+          <li>
+            <a href="/pages/logInRegPage.html"
+              ><i class="bx bx-chart"></i>
+              <h3>Statistics</h3>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="bx bx-dollar-circle"></i>
+              <h3>Finance</h3>
+            </a>
+          </li>
+          <li class="settingbtn">
+            <a>
+              <i class="bx bx-bell"></i>
+              <h3>Notification</h3>
+            </a>
+          </li>
+          <li>
+            <a href="/pages/logInRegPage.html"
+              ><i class="bx bx-cog"></i>
+              <h3>Setting</h3>
+            </a>
+          </li>
+          <li>
+            <a href="/pages/logInRegPage.html"
+              ><i class="bx bx-exit"></i>
+              <h3>LogOut</h3>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- SIDE NAVBAR  END-->
 
-        <input
-          type="text"
-          name=""
-          id="product-name"
-          placeholder="Product Name"
-        />
+      <!-- RIGHT SIDE FORM -->
 
-        <input type="text" name="" id="price" placeholder="price" />
+      <section class="form-section">
+        <!-- top navbar -->
+        <div class="navbarTop">
+          <h3 class="headhome">DASHBOARD</h3>
+          <a href="/Pages/product.html">PRODUCT</a>
+          <a href="/Pages/cart.html">CART</a>
+          <div class="search">
+            <i class="bx bx-search-alt-2"></i>
+            <input type="serach" placeholder="Search..." name="" id="" />
+          </div>
+          <div class="profile-img">
+            <a href=""><img src="" alt="profile-img" /> </a>
+            <a class="notification-bell" href=""><i class="bx bx-bell">0</i></a>
+            <i class="bx bx-menu"></i>
+          </div>
+        </div>
+        <!-- top navbar end -->
+        <form action="" class="form" id="form-con">
+          <div class="image-preview" id="preview-con">
+            <img src="" alt="" id="preview" />
+          </div>
+          <input type="file" id="uplaod-img" />
 
-        <input type="text" name="" id="quantity" placeholder="quanatity" />
-        <input type="number"   value="1"  id="quantity-selected" placeholder="" />
+          <input
+            type="text"
+            name=""
+            id="product-name"
+            placeholder="Product Name"
+          />
 
-        <textarea
-          name=""
-          id="discription"
-          cols="30"
-          rows="10"
-          placeholder="discription"
-        ></textarea>
-        <button type="submit" id="submit-btn">POST ITEM</button>
-      </form>
+          <input type="text" name="" id="price" placeholder="price" />
 
-      <div class="table-con">
-        <table class="table">
-          <tr>
-            <th>Product Image</th>
-            <th>Product Name</th>
-            <th>Product Price</th>
-            <th>Product Quantity</th>
-            <th>Product Discription</th>
-          </tr>
-        </table>
-        <table id="display">
-          <!-- <td>Product Image</td>
+          <input type="text" name="" id="quantity" placeholder="quanatity" />
+          <input
+            type="number"
+            value="1"
+            id="quantity-selected"
+            placeholder=""
+          />
+
+          <textarea
+            name=""
+            id="discription"
+            cols="30"
+            rows="10"
+            placeholder="discription"
+          ></textarea>
+          <button type="submit" id="submit-btn">POST ITEM</button>
+        </form>
+        <div class="table-con">
+          <table class="table">
+            <tr>
+              <th>Product Image</th>
+              <th>Product Name</th>
+              <th>Product Price</th>
+              <th>Product Quantity</th>
+              <th>Product Discription</th>
+            </tr>
+          </table>
+          <table id="display">
+            <!-- <td>Product Image</td>
           <td>Product Name</td>
           <td>Product Price</td>
           <td>Product Discription</td> -->
-        </table>
-      </div>
+          </table>
+        </div>
+      </section>
     </main>
 
     <script src="/App/app.js"></script>
