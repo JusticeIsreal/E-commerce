@@ -128,6 +128,9 @@ main {
     .cart-img {
       border: 2px solid red;
       width: 50%;
+      img{
+        width: 100%;
+      }
     }
     .cart-details {
       width: 50%;

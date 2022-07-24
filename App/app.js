@@ -7,6 +7,7 @@ let uplaodImg = document.getElementById("uplaod-img");
 let preview = document.getElementById("preview");
 let previewCon = document.getElementById("preview-con");
 let formCon = document.getElementById("form-con");
+let quantitySelected = document.getElementById("quantity-selected");
 
 // console.log(productDetails)
 
@@ -40,6 +41,7 @@ const postItems = (e) => {
     productName: productName.value,
     price: price.value,
     quantity: quantity.value,
+    quantitySelected: quantitySelected.value,
     discription: discription.value,
   };
   productDetails.push(itemDetails);
@@ -54,7 +56,7 @@ let cardMain = document.getElementById("cardmain");
 
 const populateDetails = (productDetails) => {
   display.innerHTML = productDetails.map((item, i) => {
-    // console.log(item.itemImage);
+    console.log(item);
     return ` <tr>
       <td><img class="cardImage" src=${
         "data:image/png;base64," + item.itemImage

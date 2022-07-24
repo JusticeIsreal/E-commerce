@@ -103,6 +103,9 @@ main .table-con #display tr td img {
   border: 2px solid red;
   width: 50%;
 }
+.cart .cart-con .cart-img img {
+  width: 100%;
+}
 .cart .cart-con .cart-details {
   width: 50%;
 }
