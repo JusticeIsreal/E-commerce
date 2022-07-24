@@ -12,7 +12,7 @@ const displayCartDetails = function (cartDetails) {
           <div class="cart-con">
         <div class="cart-img" id="cartImg"><img class="cardImage" src=${
           "data:image/png;base64," + item.itemImage
-        } /></div>
+        } /><button class="deletebtn">Remove</button></div>
         <div class="cart-details">
           <h2>${item.productName}</h2>
           <h4>${item.price}</h4>
@@ -24,6 +24,7 @@ const displayCartDetails = function (cartDetails) {
           <h3  class="countcart" id="count">${item.quantitySelected}</h3>
           <button class="removebtn">-</button>
         </div>
+        
       </div>`;
   });
 };
@@ -32,12 +33,13 @@ displayCartDetails(cartDetails);
 const addBtn = document.querySelectorAll(".addup");
 const removeBtn = document.querySelectorAll(".removebtn");
 
+const deleteBtn = document.querySelectorAll(".deletebtn");
 const countCart = document.querySelectorAll(".countcart");
 
 let increaseCart = Array.from(addBtn);
 let cartcount = Array.from(countCart);
-
 let decreaseCart = Array.from(removeBtn);
+let deleteItem = Array.from(deleteBtn);
 
 increaseCart.forEach((ite, index) => {
   ite.addEventListener("click", (e) => {
@@ -46,14 +48,21 @@ increaseCart.forEach((ite, index) => {
 });
 
 decreaseCart.forEach((ite, index) => {
-    ite.addEventListener("click", (e) => {
-      console.log("remove")
+  ite.addEventListener("click", (e) => {
     cartcount[index].innerHTML = --cartDetails[index].quantitySelected;
   });
 });
-// addCart.forEach((item, index) => {
-//   item.addEventListener("click", (e) => {
-//     cartArry.push(productDetails[index]);
-//     localStorage.setItem("cart", JSON.stringify(cartArry));
-//   });
-// });
+
+const deletProduct = (index) => {
+  console.log("gg");
+  let newCartDetails = cartDetails.filter((item, i) => i !== index);
+    localStorage.setItem("cart", JSON.stringify(newCartDetails));
+    location.reload();
+};
+
+
+deleteItem.forEach((ite, index) => {
+  ite.addEventListener("click", (e) => {
+    deletProduct(index);
+  });
+});
