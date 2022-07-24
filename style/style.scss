@@ -213,22 +213,6 @@ main {
         &.active {
           background-color: whitesmoke;
           border: $border;
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: -25%;
-            transform: translateY(50%);
-            left: -3px;
-            width: 6px;
-            height: 75%;
-            border-radius: 10px;
-            background-color: $special-text-Color;
-          }
-        }
-
-        &:hover {
-          background-color: $hover-Color;
         }
 
         a {
@@ -238,10 +222,6 @@ main {
           height: 100%;
           cursor: pointer;
 
-          &:hover {
-            color: $hover-Text-Color;
-            font-weight: 600;
-          }
 
           h3 {
             font-weight: 400;
@@ -259,6 +239,7 @@ main {
 
           i {
             padding: 0 8px 0 8px;
+            font-size: 20px;
 
             @include responsive(tablet) {
               padding: 0 10px 0 0;
@@ -268,6 +249,9 @@ main {
       }
     }
   }
+
+
+  // RIGHT SIDE OF PAGE
   .form-section {
     border: 2px solid green;
     overflow: scroll;
@@ -354,6 +338,7 @@ main {
           border-radius: 100%;
           color: $text-Color;
           background-color: $cardsj-bg;
+          border: $border;
           width: 20px;
           height: 20px;
           right: 70px;
@@ -365,7 +350,7 @@ main {
         }
 
         .bx-menu {
-          font-size: 40px;
+          font-size: 30px;
           transition: 0.3s linear;
           color: $text-Color;
 
