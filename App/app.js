@@ -20,8 +20,7 @@ uplaodImg.addEventListener("change", (e) => {
   let imgSrc = URL.createObjectURL(img);
 
   preview.src = imgSrc;
-  console.log(preview.src);
-  console.log(imgSrc);
+ 
 });
 
 const getBase64Image = (img) => {
@@ -46,6 +45,7 @@ const postItems = (e) => {
   };
   productDetails.push(itemDetails);
   localStorage.setItem("product", JSON.stringify(productDetails));
+  location.reload()
 };
 submitBtn.addEventListener("click", postItems);
 
@@ -55,7 +55,7 @@ let display = document.getElementById("display");
 let cardMain = document.getElementById("cardmain");
 
 const populateDetails = (productDetails) => {
-  display.innerHTML = productDetails.map((item, i) => {
+ let uu= productDetails.map((item, i) => {
     console.log(item);
     return ` <tr>
       <td><img class="cardImage" src=${
@@ -65,6 +65,7 @@ const populateDetails = (productDetails) => {
           <td>${item.price}</td>
           <td>${item.quantity}</td>
           <td>${item.discription}</td> </tr>`;
-  });
+ });
+   display.innerHTML= uu.join("")
 };
 populateDetails(productDetails);
