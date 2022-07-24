@@ -3,6 +3,7 @@ let cardMain = document.getElementById("cardmain");
 let cartArry = [];
 
 const productDetails = JSON.parse(localStorage.getItem("product")) || [];
+const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
 
 const populateDetails = (productDetails) => {
   cardMain.innerHTML = productDetails.map((item, i) => {
@@ -26,12 +27,15 @@ const populateDetails = (productDetails) => {
 populateDetails(productDetails);
 
 const buttons = document.querySelectorAll(".realBtn");
-
 let addCart = Array.from(buttons);
-
+let cartCount = document.getElementById("cart-count");
+cartCount.innerHTML = cartDetails.length;
 addCart.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    cartArry.push(productDetails[index]);
-    localStorage.setItem("cart", JSON.stringify(cartArry));
+    cartDetails.push(productDetails[index]);
+    localStorage.setItem("cart", JSON.stringify(cartDetails));
+    cartCount.innerHTML = cartDetails.length;
   });
 });
+
+

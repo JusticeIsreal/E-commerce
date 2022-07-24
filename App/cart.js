@@ -6,9 +6,7 @@ const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
 
 const displayCartDetails = function (cartDetails) {
   cart.innerHTML = cartDetails.map((item, i) => {
-    // console.log(item.itemImage);
     return ` 
-          
           <div class="cart-con">
         <div class="cart-img" id="cartImg"><img class="cardImage" src=${
           "data:image/png;base64," + item.itemImage
@@ -54,7 +52,6 @@ decreaseCart.forEach((ite, index) => {
 });
 
 const deletProduct = (index) => {
-  console.log("gg");
   let newCartDetails = cartDetails.filter((item, i) => i !== index);
     localStorage.setItem("cart", JSON.stringify(newCartDetails));
     location.reload();

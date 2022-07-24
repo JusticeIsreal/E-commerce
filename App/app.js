@@ -12,15 +12,25 @@ let quantitySelected = document.getElementById("quantity-selected");
 // console.log(productDetails)
 
 const productDetails = JSON.parse(localStorage.getItem("product")) || [];
+const [updateDB] = JSON.parse(localStorage.getItem("update")) || [];
+
+productName.value = updateDB ? updateDB.productName : productName.value;
+preview.src = updateDB
+  ? `data:image/png;base64, ${updateDB.itemImage}`
+  : preview.src;
+price.value = updateDB ? updateDB.price : price.value;
+quantity.value = updateDB ? updateDB.quantity : quantity.value;
+quantitySelected.value = updateDB
+  ? updateDB.quantitySelected
+  : quantitySelected.value;
+discription.value = updateDB ? updateDB.discription : discription.value;
+itemId = updateDB ? updateDB.productId : new Date().valueOf();
 
 uplaodImg.addEventListener("change", (e) => {
   e.preventDefault();
-
   let img = e.target.files[0];
   let imgSrc = URL.createObjectURL(img);
-
   preview.src = imgSrc;
- 
 });
 
 const getBase64Image = (img) => {
@@ -36,6 +46,7 @@ const getBase64Image = (img) => {
 const postItems = (e) => {
   e.preventDefault();
   const itemDetails = {
+    productId: itemId,
     itemImage: getBase64Image(preview),
     productName: productName.value,
     price: price.value,
@@ -43,29 +54,67 @@ const postItems = (e) => {
     quantitySelected: quantitySelected.value,
     discription: discription.value,
   };
-  productDetails.push(itemDetails);
+
+  if (updateDB) {
+    productDetails.map((item, index) => {
+      if (item.productId === itemDetails.productId) {
+        productDetails[index] = itemDetails;
+      }
+    });
+    localStorage.removeItem("update")
+  } else {
+    productDetails.push(itemDetails);
+  }
   localStorage.setItem("product", JSON.stringify(productDetails));
-  location.reload()
+  location.reload();
 };
 submitBtn.addEventListener("click", postItems);
 
 let display = document.getElementById("display");
-
-// products
 let cardMain = document.getElementById("cardmain");
 
 const populateDetails = (productDetails) => {
- let uu= productDetails.map((item, i) => {
-    console.log(item);
+  let adminTable = productDetails.map((item, i) => {
+    // console.log(item);
     return ` <tr>
-      <td><img class="cardImage" src=${
+      <td><button class="deleteTable">Delete</button><button class="editTable">Edit</button><img class="cardImage" src=${
         "data:image/png;base64," + item.itemImage
       } /></td>
           <td>${item.productName}</td>
           <td>${item.price}</td>
           <td>${item.quantity}</td>
-          <td>${item.discription}</td> </tr>`;
- });
-   display.innerHTML= uu.join("")
+          <td>${item.discription}</td> </tr> `;
+  });
+  display.innerHTML = adminTable.join("");
 };
 populateDetails(productDetails);
+
+let deleteTable = document.querySelectorAll(".deleteTable");
+let deleteTableRow = Array.from(deleteTable);
+
+let editTable = document.querySelectorAll(".editTable");
+let editTableRow = Array.from(editTable);
+
+const deleteTableItem = (index) => {
+  let newTable = productDetails.filter((item, i) => i !== index);
+  localStorage.setItem("product", JSON.stringify(newTable));
+  location.reload();
+};
+
+deleteTableRow.forEach((ite, index) => {
+  ite.addEventListener("click", (e) => {
+    deleteTableItem(index);
+  });
+});
+
+const editTableItem = (e, index) => {
+  let filterArray = productDetails.filter((item, i) => i === index);
+  localStorage.setItem("update", JSON.stringify(filterArray));
+  location.reload();
+};
+
+editTableRow.forEach((ite, index) => {
+  ite.addEventListener("click", (e) => {
+    editTableItem(e.target, index);
+  });
+});
