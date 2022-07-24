@@ -26,7 +26,6 @@ main {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  border: 2px solid blue;
   overflow: hidden;
 }
 main nav {
@@ -34,7 +33,7 @@ main nav {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 2px solid red;
+  border: 1px solid royalblue;
   height: 100vh;
   width: 42%;
   max-width: 42%;
@@ -46,19 +45,7 @@ main nav {
   top: 0;
   left: -100vw;
   transition: 0.5s ease;
-  background-color: #fff;
-}
-@media only screen and (min-width: 850px) {
-  main nav {
-    position: relative;
-    position: -webkit-sticky;
-    position: sticky;
-    margin-bottom: auto;
-    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
-  }
-}
-main nav.open {
-  left: 0;
+  background-color: whitesmoke;
 }
 @media only screen and (min-width: 850px) {
   main nav {
@@ -67,26 +54,32 @@ main nav.open {
     min-width: 300px;
     margin-left: 0;
     z-index: 0;
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-bottom: auto;
   }
+}
+main nav.open {
+  left: 0;
 }
 main nav .profile {
   position: relative;
-  padding: 0 0 25px 0;
-  border-bottom: 1px solid royalblue;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid royalblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 2px solid red;
 }
 main nav .profile .profile-pic-con {
-  border: 2px solid royalblue;
+  border: 1px solid royalblue;
   position: relative;
   border-radius: 100%;
   padding: 0;
   width: 80px;
   height: 80px;
-  border: 2px solid blue;
 }
 @media only screen and (min-width: 850px) {
   main nav .profile .profile-pic-con {
@@ -95,22 +88,24 @@ main nav .profile .profile-pic-con {
   }
 }
 main nav .profile .profile-pic-con i {
-  font-size: 25px;
+  font-size: 20px;
   position: absolute;
   bottom: 5px;
   right: 0;
-  background-color: rgba(65, 105, 225, 0.54);
+  background-color: whitesmoke;
   border-radius: 100%;
+  border: 1px solid royalblue;
   padding: 5px;
 }
 main nav .profile .profile-pic-con i:hover {
-  background-color: rgba(65, 105, 225, 0.259);
+  background-color: #4c5eff;
 }
 main nav .profile .profile-pic-con img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
   border-radius: 100%;
-  border: 2px solid red;
 }
 main nav .profile h4 {
   display: flex;
@@ -156,13 +151,23 @@ main nav ul {
     padding: 0 15px;
   }
 }
+main nav ul .currentPage {
+  border: 1px solid royalblue;
+  border-left: 10px solid royalblue;
+  background-color: white;
+}
 main nav ul li {
   width: 100%;
   margin-bottom: 10px;
   height: 40px;
   border-radius: 5px;
   position: relative;
-  transition: 0.3s ease-out;
+  transition: 0.1s ease-out;
+}
+main nav ul li:hover {
+  border: 1px solid royalblue;
+  border-left: 10px solid royalblue;
+  background-color: white;
 }
 @media only screen and (min-width: 850px) {
   main nav ul li {
@@ -171,7 +176,7 @@ main nav ul li {
 }
 main nav ul li.active {
   background-color: whitesmoke;
-  border: 1px solid rgb(214, 214, 214);
+  border: 1px solid royalblue;
 }
 main nav ul li.active::before {
   content: "";
@@ -241,7 +246,7 @@ main .form-section .navbarTop {
   position: sticky;
   top: 0;
   background: whitesmoke;
-  border-bottom: 1px solid rgb(214, 214, 214);
+  border-bottom: 1px solid royalblue;
   z-index: 10;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
 }
