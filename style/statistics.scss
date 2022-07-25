@@ -411,7 +411,7 @@ main {
     form {
       overflow: hidden;
       padding: 20px;
-      margin-top: 50px;
+    
       .general-input {
         overflow: hidden;
         padding: 10px;
@@ -498,34 +498,28 @@ main {
       }
     }
     .table-con {
-      margin-top: 50px;
-      // border: 4px solid green;
+      border: 4px solid green;
       .table {
-        // border: 2px solid red;
+        border: 2px solid red;
         border-collapse: collapse;
         table-layout: fixed;
         width: 100%;
         th {
-          border: 2px solid $special-text-Color;
-          color: $text-Color;
+          border: 2px solid red;
         }
       }
       #display {
-        // border: 1px solid red;
+        border: 1px solid red;
         border-collapse: collapse;
         table-layout: fixed;
         width: 100%;
 
         tr {
-          
           td {
             justify-content: center;
             align-items: center;
             text-align: center;
-          
-       
-            border: $border;
-            color: $special-text-Color;
+            border: 1px solid black;
             img {
               width: 50px;
             }

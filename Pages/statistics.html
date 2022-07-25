@@ -7,8 +7,8 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style/style.css" />
-    <title>E Com</title>
+    <link rel="stylesheet" href="/style/statistics.css" />
+    <title>Statistics</title>
   </head>
   <body>
     <main class="form-main">
@@ -24,15 +24,15 @@
           <p>Justiceyba@gmail.com</p>
         </div>
         <ul>
-          <li class="currentPage">
-            <a>
+          <li class="">
+            <a href="/index.html">
               <i class="bx bxs-report"></i>
               <h3>Dashboard</h3>
             </a>
           </li>
 
-          <li>
-            <a href="/Pages/statistics.html"
+          <li class="currentPage">
+            <a href="/"
               ><i class="bx bx-chart"></i>
               <h3>Statistics</h3>
             </a>
@@ -70,7 +70,7 @@
       <section class="form-section">
         <!-- top navbar -->
         <div class="navbarTop">
-          <h3 class="headhome">DASHBOARD</h3>
+          <h3 class="headhome">STATISTICS</h3>
 
           <div class="search">
             <i class="bx bx-search-alt-2"></i>
@@ -84,8 +84,6 @@
         </div>
         <!-- top navbar end -->
 
-        <a href="/Pages/product.html">PRODUCT</a>
-        <a href="/Pages/cart.html">CART</a>
         <!-- TOP CARDS -->
         <section class="top-cards">
           <div class="card-1">
@@ -110,59 +108,7 @@
           </div>
         </section>
         <!-- TOP CARDS END -->
-        <!-- FORM CONTENT -->
-        <form action="" class="form" id="form-con">
-          <div class="general-input">
-            <div class="preview-input-container">
-              <div class="image-preview" id="preview-con">
-                <img src="" alt="" id="preview" />
-              </div>
 
-              <div class="all-input">
-                <input type="file" id="uplaod-img" />
-
-                <input
-                  type="text"
-                  name=""
-                  id="product-name"
-                  placeholder="Product Name"
-                />
-                <select name="category" id="categoryList">
-                  <option value="">SELECT CATEGORY</option>
-                  <option value="Food">Food</option>
-                  <option value="houseHold">House Hold</option>
-                  <option value="fashion">Fashion</option>
-                  <option value="car">Automibile</option>
-                  <option value="electronics">Electronics</option>
-                </select>
-
-                <input type="text" name="" id="price" placeholder="price" />
-
-                <input
-                  type="text"
-                  name=""
-                  id="quantity"
-                  placeholder="quanatity"
-                />
-                <input
-                  type="number"
-                  value="1"
-                  id="quantity-selected"
-                  placeholder=""
-                />
-              </div>
-            </div>
-
-            <textarea
-              name=""
-              id="discription"
-              cols="30"
-              rows="10"
-              placeholder="discription"
-            ></textarea>
-            <button type="submit" id="submit-btn">POST ITEM</button>
-          </div>
-        </form>
         <div class="table-con">
           <table class="table">
             <tr>
@@ -181,9 +127,11 @@
           <td>Product Discription</td> -->
           </table>
         </div>
+        <!-- FORM CONTENT -->
       </section>
     </main>
 
-    <script src="/App/app.js"></script>
+    <script src="/App/statistics.js"></script>
+    <!-- <script src="/App/app.js"></script> -->
   </body>
 </html>

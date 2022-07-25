@@ -387,7 +387,6 @@ main .form-section .top-cards .card-1 span {
 main .form-section form {
   overflow: hidden;
   padding: 20px;
-  margin-top: 50px;
 }
 main .form-section form .general-input {
   overflow: hidden;
@@ -478,18 +477,19 @@ main .form-section form .general-input #submit-btn {
   }
 }
 main .form-section .table-con {
-  margin-top: 50px;
+  border: 4px solid green;
 }
 main .form-section .table-con .table {
+  border: 2px solid red;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
 main .form-section .table-con .table th {
-  border: 2px solid royalblue;
-  color: rgb(68, 68, 68);
+  border: 2px solid red;
 }
 main .form-section .table-con #display {
+  border: 1px solid red;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
@@ -498,8 +498,7 @@ main .form-section .table-con #display tr td {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid royalblue;
-  color: royalblue;
+  border: 1px solid black;
 }
 main .form-section .table-con #display tr td img {
   width: 50px;
@@ -570,4 +569,4 @@ main .form-section .table-con #display tr td img {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=statistics.css.map */
