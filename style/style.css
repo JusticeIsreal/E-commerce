@@ -370,7 +370,7 @@ main .form-section .top-cards .card-1 i {
   color: royalblue;
   position: absolute;
   right: 5px;
-  top: 2px;
+  top: 3px;
 }
 @media only screen and (min-width: 850px) {
   main .form-section .top-cards .card-1 {

@@ -84,7 +84,7 @@ const populateDetails = (productDetails) => {
       } /></td>
           <td>${item.productName}</td>
            <td>${item.category}</td>
-          <td class="price-table">${item.price}</td>
+          <td class="price-table">N ${item.price} </td>
           <td class="qty-table">${item.quantity}</td>
           <td>${item.discription}</td> </tr> `;
   });
