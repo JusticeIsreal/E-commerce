@@ -3,18 +3,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style/product.css" />
     <title>Product Page</title>
   </head>
   <body>
-    <section><a href="/index.html">BACK</a></section>
-    <a href="/Pages/cart.html">cart</a>
+    <!-- CLIENT PAGE -->
+    <section class="index-page-con">
+      <!-- header section -->
+      <header class="index-header">
+        <a href="/"> <img src="/image/IMG_4156.JPG" alt="" /></a>
+        <nav class="navbar">
+          <ul>
+            <a class="left" href="/"><li>Home</li></a>
+            <a class="right" href=""><li>About</li></a>
+            <a class="left" href=""><li>Contact</li></a>
+            <a class="right" href=""><li>FAQs</li></a>
+          </ul>
+        </nav>
+        <i class="bx bx-menu"></i>
+      </header>
+      <!-- header end -->
 
-    <h1 id="cart-count"></h1>
-    <main class="card" id="cardmain">
-     
-    </main>
+      <!-- banner section starts -->
+      <main class="banner">
+        <div class="billboard">
+          <div class="banner-txt">
+            <h3>E-COMMERCE</h3>
+            <div class="underline"></div>
+            <h4>Buy more payless</h4>
+            <h1>
+              YOUR BEST ONLINE STORE <i class="bx bxs-cloud-lightning"></i>
+            </h1>
+            <h4>Deliever to your door step in quick time</h4>
+            <sup
+              ><i><p>Better , Faster and Affordatble delievery</p></i>
+            </sup>
+          </div>
+        </div>
+        <div class="bannerimg">
+          <!-- <img src="/image/IMG_4156.JPG" alt="" /> -->
+        </div>
+      </main>
+      <!-- banner section ends -->
 
+      <a href="/index.html">BACK</a>
+      <a href="/Pages/cart.html">cart</a>
+
+      <h1 id="cart-count"></h1>
+      <main class="card" id="cardmain"></main>
+    </section>
+
+    <footer class="footer">&copy2022 by Justice Isreal Agbonma</footer>
     <script src="/App/productDetails.js"></script>
   </body>
 </html>
