@@ -491,6 +491,7 @@ main .form-section .table-con .table th {
   color: rgb(68, 68, 68);
   font-size: 13px;
   padding: 10px;
+  overflow: scroll;
 }
 main .form-section .table-con .display-table {
   overflow: scroll;
