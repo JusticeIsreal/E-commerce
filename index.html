@@ -88,39 +88,53 @@
           </div>
         </div>
         <!-- top navbar end -->
+
+        <!-- FORM CONTENT -->
         <form action="" class="form" id="form-con">
           <a href="/Pages/product.html">PRODUCT</a>
           <a href="/Pages/cart.html">CART</a>
-          <div class="image-preview" id="preview-con">
-            <img src="" alt="" id="preview" />
+          <div class="general-input">
+            <div class="preview-input-container">
+              <div class="image-preview" id="preview-con">
+                <img src="" alt="" id="preview" />
+              </div>
+
+              <div class="all-input">
+                <input type="file" id="uplaod-img" />
+
+                <input
+                  type="text"
+                  name=""
+                  id="product-name"
+                  placeholder="Product Name"
+                />
+
+                <input type="text" name="" id="price" placeholder="price" />
+
+                <input
+                  type="text"
+                  name=""
+                  id="quantity"
+                  placeholder="quanatity"
+                />
+                <input
+                  type="number"
+                  value="1"
+                  id="quantity-selected"
+                  placeholder=""
+                />
+              </div>
+            </div>
+
+            <textarea
+              name=""
+              id="discription"
+              cols="30"
+              rows="10"
+              placeholder="discription"
+            ></textarea>
+            <button type="submit" id="submit-btn">POST ITEM</button>
           </div>
-          <input type="file" id="uplaod-img" />
-
-          <input
-            type="text"
-            name=""
-            id="product-name"
-            placeholder="Product Name"
-          />
-
-          <input type="text" name="" id="price" placeholder="price" />
-
-          <input type="text" name="" id="quantity" placeholder="quanatity" />
-          <input
-            type="number"
-            value="1"
-            id="quantity-selected"
-            placeholder=""
-          />
-
-          <textarea
-            name=""
-            id="discription"
-            cols="30"
-            rows="10"
-            placeholder="discription"
-          ></textarea>
-          <button type="submit" id="submit-btn">POST ITEM</button>
         </form>
         <div class="table-con">
           <table class="table">
