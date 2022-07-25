@@ -68,7 +68,7 @@ const postItems = (e) => {
     productDetails.unshift(itemDetails);
   }
   localStorage.setItem("product", JSON.stringify(productDetails));
-  // location.reload();
+  location.reload();
 };
 submitBtn.addEventListener("click", postItems);
 
