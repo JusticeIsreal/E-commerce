@@ -479,6 +479,7 @@ main .form-section form .general-input #submit-btn {
 }
 main .form-section .table-con {
   margin-top: 50px;
+  padding: 5px;
 }
 main .form-section .table-con .table {
   border-collapse: collapse;
@@ -486,23 +487,33 @@ main .form-section .table-con .table {
   width: 100%;
 }
 main .form-section .table-con .table th {
-  border: 2px solid royalblue;
+  border: 1px solid royalblue;
   color: rgb(68, 68, 68);
+  font-size: 13px;
+  padding: 10px;
 }
-main .form-section .table-con #display {
+main .form-section .table-con .display-table {
+  overflow: scroll;
+  max-height: 500px;
+  border: 1px solid royalblue;
+}
+main .form-section .table-con .display-table #display {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
-main .form-section .table-con #display tr td {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+main .form-section .table-con .display-table #display tr td {
+  overflow: scroll;
+  padding: 3px;
   border: 1px solid royalblue;
-  color: royalblue;
+  color: rgb(68, 68, 68);
 }
-main .form-section .table-con #display tr td img {
-  width: 50px;
+main .form-section .table-con .display-table #display tr td img {
+  width: 100px;
+}
+main .form-section .table-con .display-table #display tr td button {
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .card {

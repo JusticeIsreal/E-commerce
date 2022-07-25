@@ -497,37 +497,51 @@ main {
         }
       }
     }
+    // end of form
+
+    // STATISTICS TABLE BELOW
     .table-con {
       margin-top: 50px;
-      // border: 4px solid green;
+
+      padding: 5px;
       .table {
         // border: 2px solid red;
         border-collapse: collapse;
         table-layout: fixed;
         width: 100%;
+
         th {
-          border: 2px solid $special-text-Color;
+          border: $border;
           color: $text-Color;
+          font-size: 13px;
+          padding: 10px;
         }
       }
-      #display {
-        // border: 1px solid red;
-        border-collapse: collapse;
-        table-layout: fixed;
-        width: 100%;
 
-        tr {
-          
-          td {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-          
-       
-            border: $border;
-            color: $special-text-Color;
-            img {
-              width: 50px;
+      .display-table {
+        overflow: scroll;
+        max-height: 500px;
+        border: $border;
+        #display {
+          // border: 1px solid red;
+          border-collapse: collapse;
+          table-layout: fixed;
+          width: 100%;
+
+          tr {
+            td {
+              overflow: scroll;
+              padding: 3px;
+              border: $border;
+              color: $text-Color;
+              img {
+                width: 100px;
+              }
+              button{
+          margin-left: 10px;
+          margin-bottom: 5px;
+
+              }
             }
           }
         }

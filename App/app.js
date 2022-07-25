@@ -63,12 +63,12 @@ const postItems = (e) => {
         productDetails[index] = itemDetails;
       }
     });
-    localStorage.removeItem("update")
+    localStorage.removeItem("update");
   } else {
     productDetails.unshift(itemDetails);
   }
   localStorage.setItem("product", JSON.stringify(productDetails));
-  location.reload();
+  // location.reload();
 };
 submitBtn.addEventListener("click", postItems);
 
@@ -122,7 +122,6 @@ editTableRow.forEach((ite, index) => {
   });
 });
 
-
 // function to toggle side nav for tablet and mobile view
 let sideNav = document.querySelector(".sidebar-left");
 let menuBtn = document.querySelector(".bx-menu");
@@ -130,7 +129,6 @@ let menuBtn = document.querySelector(".bx-menu");
 menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("rotate");
   sideNav.classList.toggle("open");
- 
 });
 
 let profileChange = document.querySelector(".update-profile");
@@ -138,17 +136,38 @@ let infoCon = document.querySelector(".change-info");
 
 profileChange.addEventListener("click", () => {
   infoCon.classList.toggle("update");
-
 });
 
-let settingbtn = document.querySelector(".settingbtn")
-let settingpage = document.querySelector(".setting-page")
-let headhome =document.querySelector(".headhome")
+let settingbtn = document.querySelector(".settingbtn");
+let settingpage = document.querySelector(".setting-page");
+let headhome = document.querySelector(".headhome");
 
-headhome.addEventListener('click', () => {
-  settingpage.classList.remove("showsetting")
-})
-settingbtn.addEventListener('click', () => {
-   sideNav.classList.remove("open");
-  settingpage.classList.toggle("showsetting")
-})
+headhome.addEventListener("click", () => {
+  settingpage.classList.remove("showsetting");
+});
+settingbtn.addEventListener("click", () => {
+  sideNav.classList.remove("open");
+  settingpage.classList.toggle("showsetting");
+});
+
+let topCardDetails = document.querySelector(".top-cards");
+topCardDetails.innerHTML = `  <div class="card-1">
+            <h3>Store count</h3>
+            <h1>${productDetails.length}</h1>
+            <span>Items displayed</span>
+          </div>
+          <div class="card-1">
+            <h3>Requests</h3>
+            <h1>200</h1>
+            <span>Impressions</span>
+          </div>
+          <div class="card-1">
+            <h3>Clients</h3>
+            <h1>9,458</h1>
+            <span>Registrations</span>
+          </div>
+          <div class="card-1">
+            <h3>Order</h3>
+            <h1>56,731</h1>
+            <span>Delievered</span>
+          </div>`;

@@ -60,6 +60,29 @@ menuBtn.addEventListener("click", () => {
   sideNav.classList.toggle("open");
 });
 
+
+let topCardDetails = document.querySelector(".top-cards");
+topCardDetails.innerHTML = `  <div class="card-1">
+            <h3>Store count</h3>
+            <h1>${productDetails.length}</h1>
+            <span>Items displayed</span>
+          </div>
+          <div class="card-1">
+            <h3>Requests</h3>
+            <h1>200</h1>
+            <span>Impressions</span>
+          </div>
+          <div class="card-1">
+            <h3>Clients</h3>
+            <h1>9,458</h1>
+            <span>Registrations</span>
+          </div>
+          <div class="card-1">
+            <h3>Order</h3>
+            <h1>56,731</h1>
+            <span>Delievered</span>
+          </div>`;
+
 // let profileChange = document.querySelector(".update-profile");
 // let infoCon = document.querySelector(".change-info");
 
