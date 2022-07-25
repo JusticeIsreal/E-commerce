@@ -209,7 +209,6 @@
   padding: 5px;
 }
 .banner-txt {
- 
   margin-top: 15rem;
 }
 .banner-txt h3 {
@@ -267,41 +266,41 @@
     margin-top: 10vh;
   }
 }
-.footer {
-  width: 100%;
-  font-size: 15px;
-  text-align: center;
-  bottom: 0;
-  border: 2px solid red;
-}
-
 
 @media screen and (min-width: 768px) {
   .banner {
     flex-direction: row;
     display: flex;
+    height: 55vh;
   }
   .billboard {
     position: relative;
     height: 100%;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   .bannerimg {
     width: 50px;
     height: 50px;
     position: absolute;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .billboard .banner-txt {
     z-index: 5;
-    width: 50%;
+    width: 70%;
     position: absolute;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 5px;
+    top: 0;
+  }
+
+  .banner-txt {
+    /* margin-top: 7rem; */
+    margin: auto 0;
+    margin-top: 5rem;
   }
   .banner-txt h3 {
     font-size: 30px;
@@ -320,9 +319,10 @@
   }
   .banner-txt h4 {
     font-size: 15px;
+    /* line-height: 5px; */
   }
   .banner-txt h1 {
-    font-size: 50px;
+    font-size: 80px;
     font-weight: 900;
   }
   .banner-txt p {
@@ -334,18 +334,11 @@
     width: 150px;
     color: whitesmoke;
   }
-  
-
-  /* @keyframes bannerdrone {
-    0% {
-      transform: translateY(-70px);
-    }
-    50% {
-      transform: translateY(-150px);
-    }
-    100% {
-      transform: translateY(-70px);
-    }
-  } */
 }
-/* jfklsjkd */
+.footer {
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  bottom: 0;
+  border: 2px solid red;
+}
