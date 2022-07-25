@@ -363,7 +363,50 @@ main {
         }
       }
     }
+    // TOP CARDS
+    .top-cards {
+      @include flexDisplay(space-around, center, row);
+      flex-wrap: wrap;
+      padding: 10px;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 1000px;
+      @include responsive(tablet) {
+        padding: 20px;
+        gap: 20px;
+      }
 
+      .card-1 {
+        border: $border;
+        border-radius: 10px;
+        width: 150px;
+        height: 110px;
+        padding: 10px;
+        background: $cardsj-bg;
+        @include flexDisplay(space-around, center, column);
+
+        @include responsive(tablet) {
+          width: 200px;
+          height: 110px;
+        }
+        h3 {
+          padding-top: 10px;
+          color: $text-Color;
+        }
+        h1 {
+          color: $special-text-Color;
+          font-size: 40px;
+        }
+        span {
+          color: $text-Color;
+          padding-bottom: 15px;
+          font-size: 10px;
+          font-weight: 300;
+        }
+      }
+    }
+
+    // TOP CARDS END
     // FORM CONTENT
     form {
       overflow: hidden;
@@ -396,7 +439,15 @@ main {
             }
           }
         }
-
+        select {
+          padding: 5px;
+          margin-top: 30px;
+          display: block;
+          width: 300px;
+          height: 40px;
+          border: $border;
+          border-radius: 5px;
+        }
         #product-name,
         #price,
         #quantity,

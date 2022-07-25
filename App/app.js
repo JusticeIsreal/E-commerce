@@ -8,6 +8,7 @@ let preview = document.getElementById("preview");
 let previewCon = document.getElementById("preview-con");
 let formCon = document.getElementById("form-con");
 let quantitySelected = document.getElementById("quantity-selected");
+let category = document.getElementById("categoryList");
 
 // console.log(productDetails)
 
@@ -49,6 +50,7 @@ const postItems = (e) => {
     productId: itemId,
     itemImage: getBase64Image(preview),
     productName: productName.value,
+    category: category.value,
     price: price.value,
     quantity: quantity.value,
     quantitySelected: quantitySelected.value,
@@ -81,6 +83,7 @@ const populateDetails = (productDetails) => {
         "data:image/png;base64," + item.itemImage
       } /></td>
           <td>${item.productName}</td>
+           <td>${item.category}</td>
           <td>${item.price}</td>
           <td>${item.quantity}</td>
           <td>${item.discription}</td> </tr> `;

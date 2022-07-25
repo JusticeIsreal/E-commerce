@@ -30,12 +30,7 @@
               <h3>Dashboard</h3>
             </a>
           </li>
-          <li class="settingbtn">
-            <a>
-              <i class="bx bx-terminal"></i>
-              <h3>Clients</h3>
-            </a>
-          </li>
+
           <li>
             <a href="/pages/logInRegPage.html"
               ><i class="bx bx-chart"></i>
@@ -89,10 +84,34 @@
         </div>
         <!-- top navbar end -->
 
+        <a href="/Pages/product.html">PRODUCT</a>
+        <a href="/Pages/cart.html">CART</a>
+        <!-- TOP CARDS -->
+        <section class="top-cards">
+          <div class="card-1">
+            <h3>Store count</h3>
+            <h1>066</h1>
+            <span>Items displayed</span>
+          </div>
+          <div class="card-1">
+            <h3>Closed order</h3>
+            <h1>07</h1>
+            <span>Delievered</span>
+          </div>
+          <div class="card-1">
+            <h3>Clients</h3>
+            <h1>09</h1>
+            <span>Registrations</span>
+          </div>
+          <div class="card-1">
+            <h3>Order</h3>
+            <h1>0</h1>
+            <span>Impressions</span>
+          </div>
+        </section>
+        <!-- TOP CARDS END -->
         <!-- FORM CONTENT -->
         <form action="" class="form" id="form-con">
-          <a href="/Pages/product.html">PRODUCT</a>
-          <a href="/Pages/cart.html">CART</a>
           <div class="general-input">
             <div class="preview-input-container">
               <div class="image-preview" id="preview-con">
@@ -108,6 +127,14 @@
                   id="product-name"
                   placeholder="Product Name"
                 />
+                <select name="category" id="categoryList">
+                  <option value="">SELECT CATEGORY</option>
+                  <option value="Food">Food</option>
+                  <option value="houseHold">House Hold</option>
+                  <option value="fashion">Fashion</option>
+                  <option value="car">Automibile</option>
+                  <option value="electronics">Electronics</option>
+                </select>
 
                 <input type="text" name="" id="price" placeholder="price" />
 
@@ -141,6 +168,7 @@
             <tr>
               <th>Product Image</th>
               <th>Product Name</th>
+              <th>category</th>
               <th>Product Price</th>
               <th>Product Quantity</th>
               <th>Product Discription</th>

@@ -335,6 +335,55 @@ main .form-section .navbarTop .profile-img .bx-menu.rotate {
     display: none;
   }
 }
+main .form-section .top-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .top-cards {
+    padding: 20px;
+    gap: 20px;
+  }
+}
+main .form-section .top-cards .card-1 {
+  border: 1px solid royalblue;
+  border-radius: 10px;
+  width: 150px;
+  height: 110px;
+  padding: 10px;
+  background: whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .top-cards .card-1 {
+    width: 200px;
+    height: 110px;
+  }
+}
+main .form-section .top-cards .card-1 h3 {
+  padding-top: 10px;
+  color: rgb(68, 68, 68);
+}
+main .form-section .top-cards .card-1 h1 {
+  color: royalblue;
+  font-size: 40px;
+}
+main .form-section .top-cards .card-1 span {
+  color: rgb(68, 68, 68);
+  padding-bottom: 15px;
+  font-size: 10px;
+  font-weight: 300;
+}
 main .form-section form {
   overflow: hidden;
   padding: 20px;
@@ -371,6 +420,15 @@ main .form-section form .general-input .preview-input-container .image-preview #
   border-radius: 10px;
   width: 100%;
   height: 100%;
+}
+main .form-section form .general-input select {
+  padding: 5px;
+  margin-top: 30px;
+  display: block;
+  width: 300px;
+  height: 40px;
+  border: 1px solid royalblue;
+  border-radius: 5px;
 }
 main .form-section form .general-input #product-name,
 main .form-section form .general-input #price,
