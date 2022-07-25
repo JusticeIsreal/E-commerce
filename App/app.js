@@ -84,8 +84,8 @@ const populateDetails = (productDetails) => {
       } /></td>
           <td>${item.productName}</td>
            <td>${item.category}</td>
-          <td>${item.price}</td>
-          <td>${item.quantity}</td>
+          <td class="price-table">${item.price}</td>
+          <td class="qty-table">${item.quantity}</td>
           <td>${item.discription}</td> </tr> `;
   });
   display.innerHTML = adminTable.join("");
@@ -152,22 +152,22 @@ settingbtn.addEventListener("click", () => {
 
 let topCardDetails = document.querySelector(".top-cards");
 topCardDetails.innerHTML = `  <div class="card-1">
-            <h3>Store count</h3>
+            <h3>Store <i class="bx bx-store-alt"></i></h3>
             <h1>${productDetails.length}</h1>
             <span>Items displayed</span>
           </div>
           <div class="card-1">
-            <h3>Requests</h3>
+            <h3>Requests <i class="bx bx-cart-add"></i></h3>
             <h1>200</h1>
             <span>Impressions</span>
           </div>
           <div class="card-1">
-            <h3>Clients</h3>
+            <h3>Clients <i class="bx bxs-hand"></i></h3>
             <h1>9,458</h1>
             <span>Registrations</span>
           </div>
           <div class="card-1">
-            <h3>Order</h3>
+            <h3>Order <i class="bx bx-dollar-circle"></i></h3>
             <h1>56,731</h1>
             <span>Delievered</span>
           </div>`;

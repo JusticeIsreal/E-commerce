@@ -363,6 +363,14 @@ main .form-section .top-cards .card-1 {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+main .form-section .top-cards .card-1 i {
+  font-size: 20px;
+  color: royalblue;
+  position: absolute;
+  right: 5px;
+  top: 2px;
 }
 @media only screen and (min-width: 850px) {
   main .form-section .top-cards .card-1 {
@@ -481,16 +489,30 @@ main .form-section .table-con {
   margin-top: 50px;
   padding: 5px;
 }
+@media only screen and (min-width: 850px) {
+  main .form-section .table-con {
+    padding: 20px;
+  }
+}
 main .form-section .table-con .table {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
 }
+main .form-section .table-con .table .price-table,
+main .form-section .table-con .table .qty-table {
+  width: 72px;
+}
 main .form-section .table-con .table th {
   border: 1px solid royalblue;
   color: rgb(68, 68, 68);
-  font-size: 13px;
+  font-size: 10px;
   overflow: scroll;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .table-con .table th {
+    font-size: 15px;
+  }
 }
 main .form-section .table-con .display-table {
   overflow: scroll;
@@ -502,18 +524,37 @@ main .form-section .table-con .display-table #display {
   table-layout: fixed;
   width: 100%;
 }
+main .form-section .table-con .display-table #display tr .price-table,
+main .form-section .table-con .display-table #display tr .qty-table {
+  width: 70px;
+}
 main .form-section .table-con .display-table #display tr td {
   overflow: scroll;
   padding: 3px;
   border: 1px solid royalblue;
   color: rgb(68, 68, 68);
+  font-size: 10px;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .table-con .display-table #display tr td {
+    font-size: 15px;
+  }
 }
 main .form-section .table-con .display-table #display tr td img {
-  width: 100px;
+  width: 100%;
+}
+@media only screen and (min-width: 850px) {
+  main .form-section .table-con .display-table #display tr td img {
+    max-width: 150px;
+  }
 }
 main .form-section .table-con .display-table #display tr td button {
+  margin: 0 auto;
   margin-left: 10px;
   margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .card {

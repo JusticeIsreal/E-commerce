@@ -502,17 +502,28 @@ main {
       margin-top: 50px;
 
       padding: 5px;
+
+      @include responsive(tablet) {
+        padding: 20px;
+      }
       .table {
         // border: 2px solid red;
         border-collapse: collapse;
         table-layout: fixed;
         width: 100%;
-
+        .price-table,
+        .qty-table {
+          width: 72px;
+          // background-color: red;
+        }
         th {
           border: $border;
           color: $text-Color;
-          font-size: 13px;
-          padding: 10px;
+          font-size: 10px;
+          overflow: scroll;
+          @include responsive(tablet) {
+            font-size: 15px;
+          }
         }
       }
 
@@ -527,17 +538,36 @@ main {
           width: 100%;
 
           tr {
+            .price-table,
+            .qty-table {
+              width: 70px;
+              // background-color: red;
+            }
             td {
               overflow: scroll;
               padding: 3px;
               border: $border;
               color: $text-Color;
+              font-size: 10px;
+              @include responsive(tablet) {
+                font-size: 15px;
+              }
+
               img {
-                width: 100px;
+                width: 100%;
+
+                @include responsive(tablet) {
+                  // width: 90%;
+                  max-width: 150px;
+                }
               }
               button {
+                margin: 0 auto;
                 margin-left: 10px;
                 margin-bottom: 5px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
               }
             }
           }
