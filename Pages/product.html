@@ -7,6 +7,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/style/productbanner.css" />
     <link rel="stylesheet" href="/style/product.css" />
     <title>Product Page</title>
   </head>
@@ -30,8 +31,6 @@
           ></a>
           <i class="bx bx-menu"></i>
         </div>
-
-       
       </header>
       <!-- header end -->
 
@@ -40,7 +39,6 @@
         <div class="darkbg"></div>
         <div class="billboard">
           <div class="banner-txt">
-            <!-- <h3>E-COMMERCE</h3> -->
             <div class="underline"></div>
             <h4>Buy more payless</h4>
             <h1>
@@ -55,11 +53,30 @@
         </div>
       </main>
       <!-- banner section ends -->
-
-      <a href="/index.html">BACK</a>
-      <a href="/Pages/cart.html">cart</a>
-
-      <main class="card" id="cardmain"></main>
+      <!-- stock items -->
+      <section class="card-display">
+        <div class="product-category-right">
+          <div class="categoryBtn-Con">
+            <button type="button" class="category-btn btn1 button-active" data-id="all">
+              All
+            </button>
+            <button type="button" class="category-btn btn2" data-id="HouseHold">
+              HouseHold
+            </button>
+            <button type="button" class="category-btn btn3" data-id="Fashion">
+              Fashion
+            </button>
+            <button type="button" class="category-btn btn4" data-id="Automobile">
+              Automobile
+            </button>
+            <button type="button" class="category-btn btn5" data-id="Electronics">
+              Electronics
+            </button>
+          </div>
+          <main class="card" id="cardmain"></main>
+        </div>
+        <div class="trending"></div>
+      </section>
     </section>
 
     <footer class="footer">&copy2022 by Justice Isreal Agbonma</footer>

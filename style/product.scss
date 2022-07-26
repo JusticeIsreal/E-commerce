@@ -65,52 +65,86 @@ $special-Color: #4c5eff;
   }
 }
 
-// product page
-.card {
-  // border: 2px solid green;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  // grid-template-columns: 300px 300px 300px 300px;
-  gap: 50px;
+.card-display {
+  @include flexDisplay(space-between, center, row);
+  margin-top: 30px;
+  border: 2px solid red;
 
-  .card-con {
-    border: 1px solid black;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    // height: 500px;
-    gap: 5px;
-    width: 300px;
+  .product-category-right {
+    border-right: 2px solid blue;
+    width: 70%;
+    .categoryBtn-Con {
+      @include flexDisplay(space-around, center, row);
+      padding: 5px;
 
-    .card-img {
-      border: 2px solid black;
-      width: 100%;
-      // height: 450px;
-      object-fit: contain;
-
-      .cardImage {
-        width: 100%;
-        height: 100%;
+      .category-btn {
+        width: 15%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 10px;
+      }
+      .button-active {
+        border-bottom: 5px solid royalblue;
+        background-color: rgb(229, 229, 229);
       }
     }
-    .card-details {
-      // justify-content: center;
-      // align-items: center;
-      text-align: center;
-      //  border: 2px solid blue;
-      // height: 200px;
-      width: 100%;
+    .card {
+      margin-top: 10px;
+      // border: 2px solid green;
 
-      .btn {
-        #addBtn {
-          width: 100%;
-          border: 2px solid red;
+      // product page
+      .card {
+        // border: 2px solid green;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        // grid-template-columns: 300px 300px 300px 300px;
+        gap: 50px;
+
+        .card-con {
+          border: 1px solid black;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          // height: 500px;
+          gap: 5px;
+          width: 300px;
+
+          .card-img {
+            border: 2px solid black;
+            width: 100%;
+            // height: 450px;
+            object-fit: contain;
+
+            .cardImage {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .card-details {
+            // justify-content: center;
+            // align-items: center;
+            text-align: center;
+            //  border: 2px solid blue;
+            // height: 200px;
+            width: 100%;
+
+            .btn {
+              #addBtn {
+                width: 100%;
+                border: 2px solid red;
+              }
+            }
+          }
         }
       }
     }
+  }
+  .trending {
+    border: 2px solid brown;
+    width: 50px;
   }
 }
