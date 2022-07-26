@@ -165,7 +165,37 @@
   }
 }
 
+/* add to cart */
+
+.notification-bell {
+  padding: 10px;
+}
+.bxs-cart-add {
+  font-size: 30px;
+  position: relative;
+  padding: 10px;
+  border-radius: 100%;
+  width: 55px;
+  height: 55px;
+}
+#cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 500;
+  background-color: royalblue;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: whitesmoke;
+  font-size: 15px;
+}
+
 /* menu bar */
+
 .bx-menu {
   font-size: 30px;
   transition: 0.3s linear;
@@ -191,15 +221,25 @@
   height: 50vh;
   display: flex;
   flex-direction: column;
+  background-color: black;
+  background: url(/image/client\ bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
   background-position: center center;
-  border: 2px solid blue;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.171);
 }
-
+.darkbg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.428);
+}
 .billboard {
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .billboard .banner-txt {
@@ -209,14 +249,19 @@
   padding: 5px;
 }
 .banner-txt {
-  margin-top: 15rem;
+  width: 100%;
+
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 .banner-txt h3 {
   font-size: 20px;
 }
 .underline {
-  width: 25%;
-  border-bottom: 5px solid royalblue;
+  width: 35%;
+  margin: 0 auto;
+  border-bottom: 5px solid whitesmoke;
   animation: underline 10s linear infinite;
 }
 
@@ -232,39 +277,20 @@
   }
 }
 .banner-txt h1 {
-  font-size: 45px;
+  font-size: 25px;
   font-weight: 900;
-  color: royalblue;
+  color: rgb(26, 74, 220);
+}
+.banner-txt h4 {
+  color: whitesmoke;
+  /* line-height: 5px; */
+}
+
+.banner-txt p {
+  color: whitesmoke;
 }
 .banner-txt a {
-  text-align: center;
-  font-size: 40px;
-  border-radius: 15px;
-  border: 2px solid var(--special-text-Color);
-  background: var(--special-text-Color);
-  width: 150px;
   color: whitesmoke;
-  margin-top: 10px;
-}
-.banner-txt a h3 {
-  color: whitesmoke;
-}
-
-.bannerimg {
-  width: 100%;
-  height: 40%;
-  position: absolute;
-}
-.bannerimg img {
-  width: 100%;
-  margin-top: 5vh;
-  animation: bannerdrone 10s linear infinite;
-}
-
-@media screen and (max-width: 320px) {
-  .bannerimg img {
-    margin-top: 10vh;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -272,38 +298,34 @@
     flex-direction: row;
     display: flex;
     height: 55vh;
+    margin-top: 5rem;
   }
   .billboard {
+    width: 70%;
+    margin: auto 0;
     position: relative;
-    height: 100%;
-    /* border: 2px solid green; */
-  }
-
-  .bannerimg {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    /* border: 2px solid red; */
+    padding-left: 20px;
   }
 
   .billboard .banner-txt {
-    z-index: 5;
-    width: 70%;
-    position: absolute;
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding: 5px;
+  }
+  .banner-txt {
+    width: 100%;
+    /* border: 2px solid red; */
+    text-align: start;
+    position: relative;
+    /* margin-top: 6rem; */
+    position: absolute;
+    bottom: 0;
     top: 0;
   }
 
-  .banner-txt {
-    /* margin-top: 7rem; */
-    margin: auto 0;
-    margin-top: 5rem;
-  }
-  .banner-txt h3 {
-    font-size: 30px;
+  .underline {
+    display: none;
   }
 
   @keyframes underline {
@@ -317,16 +339,19 @@
       width: 10%;
     }
   }
+
   .banner-txt h4 {
     font-size: 15px;
+    color: whitesmoke;
     /* line-height: 5px; */
   }
   .banner-txt h1 {
-    font-size: 80px;
+    font-size: 350%;
     font-weight: 900;
   }
   .banner-txt p {
     font-size: 15px;
+    color: whitesmoke;
   }
   .banner-txt a {
     margin-top: 10px;
