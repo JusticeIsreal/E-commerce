@@ -66,83 +66,116 @@ $special-Color: #4c5eff;
 }
 
 .card-display {
-  @include flexDisplay(space-between, center, row);
+  @include flexDisplay(space-between, center, column);
   margin-top: 30px;
-  border: 2px solid red;
+  // border: 2px solid red;
+  height: 1000px;
+
+  @include responsive(tablet) {
+    @include flexDisplay(space-between, center, row);
+  }
 
   .product-category-right {
-    border-right: 2px solid blue;
-    width: 70%;
+    border-right: 1px solid blue;
+    width: 100%;
+
+    @include responsive(tablet) {
+      width: 70%;
+    }
+
     .categoryBtn-Con {
       @include flexDisplay(space-around, center, row);
-      padding: 5px;
+      padding: 0;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      @include responsive(tablet) {
+        @include flexDisplay(space-around, center, row);
+        padding: 5px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+      }
 
       .category-btn {
-        width: 15%;
         border: none;
         background-color: rgba(255, 255, 255, 0);
-        padding: 10px;
+        padding: 0 10px;
+        font-size: 10px;
+
+        @include responsive(tablet) {
+          width: 18%;
+          border: none;
+          background-color: rgba(255, 255, 255, 0);
+          padding: 5px 10px;
+        }
       }
       .button-active {
         border-bottom: 5px solid royalblue;
         background-color: rgb(229, 229, 229);
       }
     }
+
     .card {
       margin-top: 10px;
-      // border: 2px solid green;
+      @include flexDisplay(center, center, row);
+      // border: 2px solid red;
+      flex-wrap: wrap;
+      gap: 10px;
+      height: 100%;
 
-      // product page
-      .card {
-        // border: 2px solid green;
+      @include responsive(tablet) {
+        @include flexDisplay(space-around, center, row);
+      }
+
+      .card-con {
+        border: 1px solid black;
         padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        // grid-template-columns: 300px 300px 300px 300px;
-        gap: 50px;
+        width: 150px;
+        height: 250px;
+        gap: 20px;
+        @include flexDisplay(space-around, center, column);
 
-        .card-con {
+        @include responsive(tablet) {
+          @include flexDisplay(space-around, center, column);
+
           border: 1px solid black;
           padding: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          // height: 500px;
-          gap: 5px;
-          width: 300px;
+          width: 500px;
+          height: 450px;
+        }
 
-          .card-img {
-            border: 2px solid black;
+        .card-img {
+          border: 2px solid black;
+          width: 100%;
+          height: 50px;
+          object-fit: contain;
+
+          .cardImage {
             width: 100%;
-            // height: 450px;
-            object-fit: contain;
-
-            .cardImage {
-              width: 100%;
-              height: 100%;
-            }
+            height: 100%;
           }
-          .card-details {
-            // justify-content: center;
-            // align-items: center;
-            text-align: center;
-            //  border: 2px solid blue;
-            // height: 200px;
-            width: 100%;
-
-            .btn {
-              #addBtn {
-                width: 100%;
-                border: 2px solid red;
-              }
+        }
+        .card-details {
+          text-align: center;
+          overflow-y: scroll;
+          width: 100%;
+          h2,
+          h4,
+          h5,
+          p {
+            font-size: 10px;
+          }
+          .btn {
+            #addBtn {
+              width: 100%;
             }
           }
         }
       }
     }
   }
+
   .trending {
     border: 2px solid brown;
     width: 50px;

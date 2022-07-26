@@ -50,7 +50,6 @@ categoryBtn.forEach(function (button) {
 });
 
 
-
 // filter button style toggle
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");

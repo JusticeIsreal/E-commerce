@@ -25,26 +25,61 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 30px;
-  border: 2px solid red;
+  height: 1000px;
+}
+@media only screen and (min-width: 850px) {
+  .card-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 .card-display .product-category-right {
-  border-right: 2px solid blue;
-  width: 70%;
+  border-right: 1px solid blue;
+  width: 100%;
+}
+@media only screen and (min-width: 850px) {
+  .card-display .product-category-right {
+    width: 70%;
+  }
 }
 .card-display .product-category-right .categoryBtn-Con {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
-  padding: 5px;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+@media only screen and (min-width: 850px) {
+  .card-display .product-category-right .categoryBtn-Con {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding: 5px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+  }
 }
 .card-display .product-category-right .categoryBtn-Con .category-btn {
-  width: 15%;
   border: none;
   background-color: rgba(255, 255, 255, 0);
-  padding: 10px;
+  padding: 0 10px;
+  font-size: 10px;
+}
+@media only screen and (min-width: 850px) {
+  .card-display .product-category-right .categoryBtn-Con .category-btn {
+    width: 18%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px 10px;
+  }
 }
 .card-display .product-category-right .categoryBtn-Con .button-active {
   border-bottom: 5px solid royalblue;
@@ -52,41 +87,69 @@
 }
 .card-display .product-category-right .card {
   margin-top: 10px;
-}
-.card-display .product-category-right .card .card {
-  padding: 10px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 50px;
+  gap: 10px;
+  height: 100%;
 }
-.card-display .product-category-right .card .card .card-con {
+@media only screen and (min-width: 850px) {
+  .card-display .product-category-right .card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+.card-display .product-category-right .card .card-con {
   border: 1px solid black;
   padding: 10px;
+  width: 150px;
+  height: 250px;
+  gap: 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  gap: 5px;
-  width: 300px;
+  flex-direction: column;
 }
-.card-display .product-category-right .card .card .card-con .card-img {
+@media only screen and (min-width: 850px) {
+  .card-display .product-category-right .card .card-con {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 10px;
+    width: 500px;
+    height: 450px;
+  }
+}
+.card-display .product-category-right .card .card-con .card-img {
   border: 2px solid black;
   width: 100%;
+  height: 50px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.card-display .product-category-right .card .card .card-con .card-img .cardImage {
+.card-display .product-category-right .card .card-con .card-img .cardImage {
   width: 100%;
   height: 100%;
 }
-.card-display .product-category-right .card .card .card-con .card-details {
+.card-display .product-category-right .card .card-con .card-details {
   text-align: center;
+  overflow-y: scroll;
   width: 100%;
 }
-.card-display .product-category-right .card .card .card-con .card-details .btn #addBtn {
+.card-display .product-category-right .card .card-con .card-details h2,
+.card-display .product-category-right .card .card-con .card-details h4,
+.card-display .product-category-right .card .card-con .card-details h5,
+.card-display .product-category-right .card .card-con .card-details p {
+  font-size: 10px;
+}
+.card-display .product-category-right .card .card-con .card-details .btn #addBtn {
   width: 100%;
-  border: 2px solid red;
 }
 .card-display .trending {
   border: 2px solid brown;
