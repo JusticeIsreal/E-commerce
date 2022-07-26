@@ -16,10 +16,12 @@ const populateDetails = (productDetails) => {
         } /></div>
         <div class="card-details">
           <h2>${item.productName}</h2>
-          <h4>${item.price}</h4>
-          <h5>${item.quantity}</h5>
-          <p>${item.discription}</p>
-           <div class="btn"><button class="realBtn" id="addBtn">ADD TO CART</button></div>
+          <h4><span>N</span> ${item.price}</h4>
+          <h5><span>Qty:</span> ${item.quantity}</h5>
+           <div class="btn">
+           <p>${item.discription}</p>
+           <button class="realBtn" id="addBtn">ADD TO CART</button>
+           </div>
         </div>
        
       </div>`;
@@ -48,7 +50,6 @@ categoryBtn.forEach(function (button) {
     }
   });
 });
-
 
 // filter button style toggle
 let btn1 = document.querySelector(".btn1");
@@ -94,14 +95,33 @@ btn5.addEventListener("click", () => {
   btn4.classList.remove("button-active");
   btn5.classList.add("button-active");
 });
-let slider = [];
-for (let i = 0; i < 5; i++) {
-  let elem = productDetails[i];
-  slider.push(elem);
-}
-// console.log(slider)
-let dd = productDetails.filter((item) => item.category === "HouseHold");
-// console.log(dd);
+
+let addToCartCon = document.querySelectorAll(".card-con");
+let addToCartPop = document.querySelectorAll(".btn");
+
+addToCartCon.forEach(function (con) {
+  con.addEventListener("click", (e) => {
+    console.log(e.target);
+    console.log(con);
+    // addToCartPop.forEach(function (pop) {
+    //   console.log(pop[e.target.dataset.index])
+    // })
+    let outPut = addToCartPop;
+    outPut = Array.from(outPut);
+    // console.log(outPut);
+    // console.log(outPut[e.target.dataset.index]);
+
+    let yy = outPut[e.target.dataset.index];
+    console.log(yy);
+
+    // if (con === e.target) {
+    //   yy.classList.add("addToCartPop");
+    // } else {
+    //   yy.classList.remove("addToCartPop");
+    // }
+  });
+
+});
 
 const buttons = document.querySelectorAll(".realBtn");
 let addCart = Array.from(buttons);
