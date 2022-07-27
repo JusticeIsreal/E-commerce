@@ -62,7 +62,7 @@ const populateClass = (productDetails) => {
         <div class="card-details">
           <h2>${item.productName}</h2>
           <h4><span>N</span> ${item.price}</h4>
-          <h5><span>Qty:</span> ${item.quantity}</h5>
+          
         </div> 
       </div>`;
   });

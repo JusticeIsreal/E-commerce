@@ -11,16 +11,16 @@
 }
 
 *::-webkit-scrollbar {
-  height: 0.5rem;
+  height: 0.2rem;
   width: 0.1rem;
 }
 
 *::-webkit-scrollbar-track {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: royalblue;
+  background-color: rgba(65, 105, 225, 0);
 }
 
 $shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.301);
@@ -68,7 +68,7 @@ $special-Color: #4c5eff;
 .card-display {
   @include flexDisplay(space-between, center, column);
   margin-top: 30px;
-  // border: 2px solid red;
+  //  border: 2px solid red;
   // height: 1000px;
 
   @include responsive(tablet) {
@@ -76,12 +76,14 @@ $special-Color: #4c5eff;
   }
 
   .product-category-right {
-    border-right: 1px solid blue;
+    border-right: 1px solid rgba(0, 0, 255, 0.147);
     width: 100%;
+    margin-bottom: 100px;
 
     @include responsive(tablet) {
       width: 70%;
       max-width: 1500px;
+      margin-bottom: 0px;
     }
 
     .categoryBtn-Con {
@@ -118,13 +120,16 @@ $special-Color: #4c5eff;
     }
 
     #cardmain {
+      border-bottom: 1px solid rgba(65, 105, 225, 0.133);
       margin-top: 10px;
       @include flexDisplay(space-around, center, row);
       // border: 2px solid red;
       flex-wrap: wrap;
       gap: 10px;
       padding: 5px;
-      // height: 100%;
+      overflow-y: scroll;
+      // padding-bottom: 50px;
+      height: 500px;
 
       @include responsive(tablet) {
         @include flexDisplay(flex-start, center, row);
@@ -152,6 +157,24 @@ $special-Color: #4c5eff;
           }
         }
 
+        &:hover {
+          border-radius: 5px;
+          background-color: rgba(0, 0, 0, 0.627);
+          color: whitesmoke;
+          p {
+            color: whitesmoke;
+          }
+          #addBtn {
+            background-color: whitesmoke;
+            color: black;
+
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.397);
+              color: whitesmoke;
+              border: 1px solid whitesmoke;
+            }
+          }
+        }
         @include responsive(tablet) {
           @include flexDisplay(space-around, center, row);
           width: 30%;
@@ -273,13 +296,18 @@ $special-Color: #4c5eff;
 
   // class filter design
   .class-category-left {
-    border-right: 10px solid blue;
+    // border-right: 10px solid rgba(0, 0, 255, 0.516);
     width: 100%;
-    margin-top: 50px;
+    margin-top: -50px;
+    padding: 10px;
+    // height: 380px;
 
     @include responsive(tablet) {
       width: 30%;
       max-width: 1500px;
+      margin-top: -100px;
+      padding: 15px;
+      // margin-top: 0px;
     }
 
     .categoryBtn-Con {
@@ -293,8 +321,7 @@ $special-Color: #4c5eff;
         padding: 5px;
         margin: 0 auto;
         width: 100%;
-        border: 2px solid red;
-        // max-width: 800px;
+        // border: 2px solid red;
       }
 
       .class-btn {
@@ -316,28 +343,31 @@ $special-Color: #4c5eff;
       }
     }
 
-    .trending{
-      border: 2px solid red;
-      margin-top: 10px;
-      @include flexDisplay(flex-start, center, row);
+    .trending {
+      // border: 2px solid red;
+      // margin-top: 10px;
+      @include flexDisplay(flex-start, center, column);
       flex-wrap: wrap;
       gap: 10px;
       padding: 7px;
-      height: 250px;
-      overflow-y: scroll;
-      // height: 100%;
+      height: 280px;
+      overflow-x: scroll;
 
-     
+      @include responsive(tablet) {
+        @include flexDisplay(space-around, center, column);
+        height: 270px;
+      }
 
       .card-con {
-        border: 1px solid rgba(0, 0, 0, 0.237);
+        border: 1px solid rgba(65, 105, 225, 0.476);
         padding: 5px;
         width: 20%;
-       min-width: 110px;
+        min-width: 110px;
         height: 250px;
         gap: 3px;
         border-radius: 5px;
         position: relative;
+        margin-top: 10px;
         @include flexDisplay(space-between, center, column);
         // transition: all .3s linear;
         animation: category 0.3s ease-in;
@@ -352,18 +382,18 @@ $special-Color: #4c5eff;
         }
 
         @include responsive(tablet) {
-          @include flexDisplay(space-around, center, row);
-          width: 30%;
-          min-width: 225px;
-          height: 150px;
+          @include flexDisplay(space-around, center, column);
+          width: 25%;
+          min-width: 150px;
+          height: 250px;
         }
 
         .card-img {
           border: 1px solid rgba(0, 0, 0, 0.485);
           width: 100%;
           // max-width: 220px;
-          // min-width: 140px;
-          height: 240px;
+          // min-width: 180px;
+          height: 260px;
           margin-bottom: auto;
           object-fit: contain;
           border-radius: 5px;
@@ -372,13 +402,14 @@ $special-Color: #4c5eff;
             width: 100%;
             max-width: 220px;
             min-width: 140px;
-            height: 140px;
+            height: 260px;
           }
 
           .cardImage {
             width: 100%;
             height: 100%;
             border-radius: 5px;
+            // min-width: 120px;
 
             @include responsive(tablet) {
               // height: 140px;
@@ -390,7 +421,7 @@ $special-Color: #4c5eff;
           @include flexDisplay(space-around, center, column);
           background-color: whitesmoke;
           text-align: center;
-          height: 100%;
+          // height: 100%;
           // border: 2px solid red;
           // overflow-y: scroll;
           width: 100%;
@@ -468,6 +499,5 @@ $special-Color: #4c5eff;
         }
       }
     }
-  
   }
 }
