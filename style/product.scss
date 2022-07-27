@@ -271,9 +271,203 @@ $special-Color: #4c5eff;
     }
   }
 
-  .trending {
-    border: 2px solid brown;
-    width: 30%;
-    // height: 100vh;
+  // class filter design
+  .class-category-left {
+    border-right: 10px solid blue;
+    width: 100%;
+    margin-top: 50px;
+
+    @include responsive(tablet) {
+      width: 30%;
+      max-width: 1500px;
+    }
+
+    .categoryBtn-Con {
+      @include flexDisplay(space-around, center, row);
+      padding: 0;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      @include responsive(tablet) {
+        @include flexDisplay(space-around, center, row);
+        padding: 5px;
+        margin: 0 auto;
+        width: 100%;
+        border: 2px solid red;
+        // max-width: 800px;
+      }
+
+      .class-btn {
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0 10px;
+        font-size: 10px;
+
+        @include responsive(tablet) {
+          width: 18%;
+          border: none;
+          background-color: rgba(255, 255, 255, 0);
+          padding: 5px 10px;
+        }
+      }
+      .button-active {
+        border-bottom: 5px solid royalblue;
+        background-color: rgb(229, 229, 229);
+      }
+    }
+
+    .trending{
+      border: 2px solid red;
+      margin-top: 10px;
+      @include flexDisplay(flex-start, center, row);
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 7px;
+      height: 250px;
+      overflow-y: scroll;
+      // height: 100%;
+
+     
+
+      .card-con {
+        border: 1px solid rgba(0, 0, 0, 0.237);
+        padding: 5px;
+        width: 20%;
+       min-width: 110px;
+        height: 250px;
+        gap: 3px;
+        border-radius: 5px;
+        position: relative;
+        @include flexDisplay(space-between, center, column);
+        // transition: all .3s linear;
+        animation: category 0.3s ease-in;
+
+        @keyframes category {
+          0% {
+            transform: scale(0.3);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @include responsive(tablet) {
+          @include flexDisplay(space-around, center, row);
+          width: 30%;
+          min-width: 225px;
+          height: 150px;
+        }
+
+        .card-img {
+          border: 1px solid rgba(0, 0, 0, 0.485);
+          width: 100%;
+          // max-width: 220px;
+          // min-width: 140px;
+          height: 240px;
+          margin-bottom: auto;
+          object-fit: contain;
+          border-radius: 5px;
+
+          @include responsive(tablet) {
+            width: 100%;
+            max-width: 220px;
+            min-width: 140px;
+            height: 140px;
+          }
+
+          .cardImage {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+
+            @include responsive(tablet) {
+              // height: 140px;
+            }
+          }
+        }
+
+        .card-details {
+          @include flexDisplay(space-around, center, column);
+          background-color: whitesmoke;
+          text-align: center;
+          height: 100%;
+          // border: 2px solid red;
+          // overflow-y: scroll;
+          width: 100%;
+          h2,
+          h4,
+          h5 {
+            font-size: 10px;
+          }
+          h2 {
+            font-size: 13px;
+          }
+          h4 {
+            font-size: 10px;
+            font-weight: 400;
+          }
+          .btn {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            margin-left: 0;
+            margin-right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 5px;
+            transition: all 0.3s ease-in;
+
+            &:hover {
+              border-radius: 5px;
+              background-color: rgba(0, 0, 0, 0.627);
+              color: whitesmoke;
+              p {
+                color: whitesmoke;
+              }
+              #addBtn {
+                background-color: whitesmoke;
+                color: black;
+
+                &:hover {
+                  background-color: rgba(0, 0, 0, 0.397);
+                  color: whitesmoke;
+                  border: 1px solid whitesmoke;
+                }
+              }
+            }
+
+            p {
+              font-size: 10px;
+              color: rgba(245, 245, 245, 0);
+              margin-top: 10px;
+              text-align: center;
+              height: 70%;
+            }
+            #addBtn {
+              position: relative;
+              margin-top: auto;
+              width: 80%;
+              height: 35px;
+              border: none;
+              border-radius: 5px;
+              margin-top: 3px;
+              z-index: 20;
+              color: #44444400;
+              background-color: rgba(240, 248, 255, 0);
+
+              @include responsive(tablet) {
+                height: 30px;
+              }
+            }
+          }
+          .addToCartPop {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  
   }
 }
