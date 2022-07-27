@@ -160,13 +160,14 @@ $special-Color: #4c5eff;
         }
 
         .card-img {
-          border: 1px solid black;
+          border: 1px solid rgba(0, 0, 0, 0.485);
           width: 100%;
           max-width: 220px;
           min-width: 140px;
           height: 140px;
           margin-bottom: auto;
           object-fit: contain;
+          border-radius: 5px;
 
           @include responsive(tablet) {
             width: 100%;
@@ -178,6 +179,7 @@ $special-Color: #4c5eff;
           .cardImage {
             width: 100%;
             height: 100%;
+            border-radius: 5px;
 
             @include responsive(tablet) {
               // height: 140px;
@@ -187,7 +189,7 @@ $special-Color: #4c5eff;
 
         .card-details {
           @include flexDisplay(space-around, center, column);
-
+          background-color: whitesmoke;
           text-align: center;
           height: 100%;
           // border: 2px solid red;
@@ -216,13 +218,11 @@ $special-Color: #4c5eff;
             left: 0;
             right: 0;
             padding: 5px;
-
-            // transform: scale(0);
-            // border: 2px solid green;
-            // visibility: hidden;
+            transition: all 0.3s ease-in;
 
             &:hover {
-              background-color: rgba(0, 0, 0, 0.727);
+              border-radius: 5px;
+              background-color: rgba(0, 0, 0, 0.627);
               color: whitesmoke;
               p {
                 color: whitesmoke;
@@ -250,13 +250,17 @@ $special-Color: #4c5eff;
               position: relative;
               margin-top: auto;
               width: 80%;
-              height: 25px;
+              height: 35px;
               border: none;
               border-radius: 5px;
               margin-top: 3px;
               z-index: 20;
               color: #44444400;
               background-color: rgba(240, 248, 255, 0);
+
+              @include responsive(tablet) {
+                height: 30px;
+              }
             }
           }
           .addToCartPop {
@@ -269,6 +273,7 @@ $special-Color: #4c5eff;
 
   .trending {
     border: 2px solid brown;
-    width: 50px;
+    width: 30%;
+    // height: 100vh;
   }
 }

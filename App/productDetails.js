@@ -37,7 +37,6 @@ let categoryBtn = document.querySelectorAll(".category-btn");
 categoryBtn.forEach(function (button) {
   button.addEventListener("click", function (e) {
     let categorySet = e.currentTarget.dataset.id;
-    // e.target.classList.toggle("button-active");
     const filterPost = productDetails.filter(function (item) {
       if (item.category === categorySet) {
         return item.category;
@@ -50,6 +49,27 @@ categoryBtn.forEach(function (button) {
     }
   });
 });
+
+// function to create trending class for products
+let classTrend = document.querySelector(".trending");
+const populateClass = (productDetails) => {
+  let classItem = productDetails.map((item, i) => {
+    // console.log(item.itemImage);
+    return ` <div class="card-con" data-index=${i} >
+        <div class="card-img"><img class="cardImage" src=${
+          "data:image/png;base64," + item.itemImage
+        } /></div>
+        <div class="card-details">
+          <h2>${item.productName}</h2>
+          <h4><span>N</span> ${item.price}</h4>
+          <h5><span>Qty:</span> ${item.quantity}</h5>
+        </div> 
+      </div>`;
+  });
+  classTrend.innerHTML = classItem.join("");
+  return classTrend;
+};
+populateClass(productDetails);
 
 // filter button style toggle
 let btn1 = document.querySelector(".btn1");
@@ -96,42 +116,20 @@ btn5.addEventListener("click", () => {
   btn5.classList.add("button-active");
 });
 
-let addToCartCon = document.querySelectorAll(".card-con");
-let addToCartPop = document.querySelectorAll(".btn");
-
-addToCartCon.forEach(function (con) {
-  con.addEventListener("click", (e) => {
-    console.log(e.target);
-    console.log(con);
-    // addToCartPop.forEach(function (pop) {
-    //   console.log(pop[e.target.dataset.index])
-    // })
-    let outPut = addToCartPop;
-    outPut = Array.from(outPut);
-    // console.log(outPut);
-    // console.log(outPut[e.target.dataset.index]);
-
-    let yy = outPut[e.target.dataset.index];
-    console.log(yy);
-
-    // if (con === e.target) {
-    //   yy.classList.add("addToCartPop");
-    // } else {
-    //   yy.classList.remove("addToCartPop");
-    // }
-  });
-
-});
-
+// Add to cart function
 const buttons = document.querySelectorAll(".realBtn");
 let addCart = Array.from(buttons);
 let cartCount = document.getElementById("cart-count");
 cartCount.innerHTML = cartDetails.length;
 addCart.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    cartDetails.unshift(productDetails[index]);
-    localStorage.setItem("cart", JSON.stringify(cartDetails));
-    cartCount.innerHTML = cartDetails.length;
+    if (!cartDetails.includes(productDetails[index])) {
+      cartDetails.unshift(productDetails[index]);
+      localStorage.setItem("cart", JSON.stringify(cartDetails));
+      cartCount.innerHTML = cartDetails.length;
+    } else {
+      return false;
+    }
   });
 });
 

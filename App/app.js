@@ -9,7 +9,7 @@ let previewCon = document.getElementById("preview-con");
 let formCon = document.getElementById("form-con");
 let quantitySelected = document.getElementById("quantity-selected");
 let category = document.getElementById("categoryList");
-
+let classProduct = document.getElementById("itemClass");
 // console.log(productDetails)
 
 const productDetails = JSON.parse(localStorage.getItem("product")) || [];
@@ -52,6 +52,7 @@ const postItems = (e) => {
     productName: productName.value,
     category: category.value,
     price: price.value,
+    classProduct: classProduct.value,
     quantity: quantity.value,
     quantitySelected: quantitySelected.value,
     discription: discription.value,
@@ -74,7 +75,6 @@ submitBtn.addEventListener("click", postItems);
 
 let display = document.getElementById("display");
 let cardMain = document.getElementById("cardmain");
-
 const populateDetails = (productDetails) => {
   let adminTable = productDetails.map((item, i) => {
     // console.log(item);
@@ -84,6 +84,7 @@ const populateDetails = (productDetails) => {
       } /></td>
           <td>${item.productName}</td>
            <td>${item.category}</td>
+            <td>${item.classProduct}</td>
           <td class="price-table">N ${item.price} </td>
           <td class="qty-table">${item.quantity}</td>
           <td>${item.discription}</td> </tr> `;
