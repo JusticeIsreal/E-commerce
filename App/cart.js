@@ -15,7 +15,6 @@ const displayCartDetails = function (cartDetails) {
           <h2>${item.productName}</h2>
           <h4>${item.price}</h4>
           <h5>${item.quantity}</h5>
-          <p>${item.discription}</p>
         </div>
         <div class="btn">
           <button class="addup" id="addbtn">+</button>
