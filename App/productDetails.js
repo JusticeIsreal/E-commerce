@@ -50,12 +50,15 @@ categoryBtn.forEach(function (button) {
   });
 });
 
-// function to create trending class for products
 let classTrend = document.querySelector(".trending");
 const populateClass = (productDetails) => {
-  let classItem = productDetails.map((item, i) => {
-    // console.log(item.itemImage);
-    return ` <div class="card-con" data-index=${i} >
+  let classItem = productDetails.filter((item, i) => {
+    if (item.classProduct) {
+      return true;
+    }
+  });
+  let allClass = classItem.map((item, i) => {
+    return ` <div class="card-con" data-index =${i}>
         <div class="card-img"><img class="cardImage" src=${
           "data:image/png;base64," + item.itemImage
         } /></div>
@@ -66,10 +69,32 @@ const populateClass = (productDetails) => {
         </div> 
       </div>`;
   });
-  classTrend.innerHTML = classItem.join("");
-  return classTrend;
+  classTrend.innerHTML = allClass;
 };
 populateClass(productDetails);
+
+// to filter products by product category
+let classBtn = document.querySelectorAll(".class-btn");
+let classIte = productDetails.filter((item, i) => {
+  if (item.classProduct) {
+    return true;
+  }
+});
+classBtn.forEach(function (button) {
+  button.addEventListener("click", function (e) {
+    let classSet = e.currentTarget.dataset.id;
+    const filterClass = classIte.filter(function (item) {
+      if (item.classProduct === classSet) {
+        return item.classProduct;
+      }
+    });
+    if (classSet === "all") {
+      return populateClass(productDetails);
+    } else {
+      return populateClass(filterClass);
+    }
+  });
+});
 
 // filter button style toggle
 let btn1 = document.querySelector(".btn1");

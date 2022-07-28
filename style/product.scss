@@ -132,7 +132,9 @@ $special-Color: #4c5eff;
       height: 500px;
 
       @include responsive(tablet) {
-        @include flexDisplay(flex-start, center, row);
+        // border: 2px solid black;
+        @include flexDisplay(flex-start, baseline, row);
+   
       }
 
       .card-con {
@@ -312,15 +314,17 @@ $special-Color: #4c5eff;
 
     .categoryBtn-Con {
       @include flexDisplay(space-around, center, row);
-      padding: 0;
+      padding: 5px;
       flex-wrap: wrap;
       gap: 5px;
+      border-bottom: 1px solid rgba(65, 105, 225, 0.275);
 
       @include responsive(tablet) {
         @include flexDisplay(space-around, center, row);
         padding: 5px;
         margin: 0 auto;
         width: 100%;
+        border-bottom: 2px solid rgba(65, 105, 225, 0.275);
         // border: 2px solid red;
       }
 
@@ -344,7 +348,6 @@ $special-Color: #4c5eff;
     }
 
     .trending {
-      // border: 2px solid red;
       // margin-top: 10px;
       @include flexDisplay(flex-start, center, column);
       flex-wrap: wrap;
