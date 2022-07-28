@@ -310,6 +310,6 @@
   bottom: 0;
   position: fixed;
   /* position: absolute; */
-  background-color: rgba(65, 105, 225, 0.443);
+  background-color: rgb(127, 156, 245);
   /* border: 2px solid red; */
 }

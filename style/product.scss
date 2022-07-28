@@ -300,6 +300,7 @@ $special-Color: #4c5eff;
     width: 100%;
     margin-top: -50px;
     padding: 10px;
+    padding-bottom: 30px;
     // height: 380px;
 
     @include responsive(tablet) {
@@ -346,13 +347,13 @@ $special-Color: #4c5eff;
     }
 
     .trending {
-      // margin-top: 10px;
       @include flexDisplay(flex-start, center, column);
       flex-wrap: wrap;
       gap: 10px;
       padding: 7px;
       height: 280px;
       overflow-x: scroll;
+    
 
       @include responsive(tablet) {
         @include flexDisplay(space-around, center, column);
@@ -370,7 +371,6 @@ $special-Color: #4c5eff;
         position: relative;
         margin-top: 10px;
         @include flexDisplay(space-between, center, column);
-        // transition: all .3s linear;
         animation: category 0.3s ease-in;
 
         @keyframes category {
@@ -392,8 +392,6 @@ $special-Color: #4c5eff;
         .card-img {
           border: 1px solid rgba(0, 0, 0, 0.485);
           width: 100%;
-          // max-width: 220px;
-          // min-width: 180px;
           height: 260px;
           margin-bottom: auto;
           object-fit: contain;
@@ -422,9 +420,6 @@ $special-Color: #4c5eff;
           @include flexDisplay(space-around, center, column);
           background-color: whitesmoke;
           text-align: center;
-          // height: 100%;
-          // border: 2px solid red;
-          // overflow-y: scroll;
           width: 100%;
           h2,
           h4,
