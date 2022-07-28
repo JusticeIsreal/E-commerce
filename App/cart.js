@@ -13,8 +13,8 @@ const displayCartDetails = function (cartDetails) {
         } /><button class="deletebtn">Remove</button></div>
         <div class="cart-details">
           <h2>${item.productName}</h2>
-          <h4 class="totalSum">${item.price}</h4>
-          <h5>${item.quantity}</h5>
+          <h3 >$ <span class="totalSum">${item.price}</span></h3> 
+        
         </div>
         <div class="btn">
           <button class="addup" id="addbtn">+</button>
@@ -73,11 +73,21 @@ deleteItem.forEach((ite, index) => {
   });
 });
 
-let totalPaid = cartDetails.reduce((x, y) => {
-  x += y.price
-  return x
-}, 0)
-// console.log(x)
-console.log(totalPaid);
-console.log(cartDetails)
+// console.log(totalCost[1].innerHTML);
+let ww =[]
+cartDetails.map((item, i) => {
+  // console.log(item.price);
+  let uu = parseInt(item.price);
+  console.log(uu)
+  ww.push(uu)
+ return ww
+});
 
+let totalAmount = document.querySelector(".totalAmount")
+let totalPaid = ww.reduce((x, y) => x + y);
+ 
+totalAmount.innerHTML = totalPaid
+//  console.log(totalPaid);
+// console.log(x)
+
+// console.log(cartDetails);
