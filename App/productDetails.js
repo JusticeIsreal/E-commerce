@@ -141,6 +141,28 @@ btn5.addEventListener("click", () => {
   btn5.classList.add("button-active");
 });
 
+// filter button style toggle
+let classBtn2 = document.querySelector(".class-btn2");
+let classBtn3 = document.querySelector(".class-btn3");
+let classBtn4 = document.querySelector(".class-btn4");
+
+classBtn2.addEventListener("click", () => {
+  classBtn2.classList.add("button-active");
+  classBtn3.classList.remove("button-active");
+  classBtn4.classList.remove("button-active");
+});
+
+classBtn3.addEventListener("click", () => {
+  classBtn2.classList.remove("button-active");
+  classBtn3.classList.add("button-active");
+  classBtn4.classList.remove("button-active");
+});
+classBtn4.addEventListener("click", () => {
+  classBtn2.classList.remove("button-active");
+  classBtn3.classList.remove("button-active");
+  classBtn4.classList.add("button-active");
+});
+
 // Add to cart function
 const buttons = document.querySelectorAll(".realBtn");
 let addCart = Array.from(buttons);
