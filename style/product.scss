@@ -123,22 +123,19 @@ $special-Color: #4c5eff;
       border-bottom: 1px solid rgba(65, 105, 225, 0.133);
       margin-top: 10px;
       @include flexDisplay(space-around, center, row);
-      // border: 2px solid red;
       flex-wrap: wrap;
       gap: 10px;
       padding: 5px;
       overflow-y: scroll;
-      // padding-bottom: 50px;
       height: 500px;
 
       @include responsive(tablet) {
-        // border: 2px solid black;
+        padding-bottom: 50px;
         @include flexDisplay(flex-start, baseline, row);
-   
       }
 
       .card-con {
-        border: 1px solid rgba(0, 0, 0, 0.237);
+        border: 1px solid rgba(65, 105, 225, 0.311);
         padding: 5px;
         width: 30%;
         min-width: 150px;
@@ -185,7 +182,7 @@ $special-Color: #4c5eff;
         }
 
         .card-img {
-          border: 1px solid rgba(0, 0, 0, 0.485);
+          border: 1px solid rgba(65, 105, 225, 0.489);
           width: 100%;
           max-width: 220px;
           min-width: 140px;
@@ -247,14 +244,15 @@ $special-Color: #4c5eff;
 
             &:hover {
               border-radius: 5px;
-              background-color: rgba(0, 0, 0, 0.627);
+              background-color: rgba(0, 0, 0, 0.444);
               color: whitesmoke;
               p {
                 color: whitesmoke;
               }
               #addBtn {
-                background-color: whitesmoke;
+                background-color: rgba(65, 105, 225, 0.435);
                 color: black;
+                border: 1px solid white;
 
                 &:hover {
                   background-color: rgba(0, 0, 0, 0.397);
@@ -504,3 +502,6 @@ $special-Color: #4c5eff;
     }
   }
 }
+// footer{
+
+// }

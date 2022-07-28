@@ -73,7 +73,7 @@ const populateClass = (productDetails) => {
 };
 populateClass(productDetails);
 
-// to filter products by product category
+// to filter products by product class
 let classBtn = document.querySelectorAll(".class-btn");
 let classIte = productDetails.filter((item, i) => {
   if (item.classProduct) {
@@ -141,7 +141,7 @@ btn5.addEventListener("click", () => {
   btn5.classList.add("button-active");
 });
 
-// filter button style toggle
+// filter trending class   toggle
 let classBtn2 = document.querySelector(".class-btn2");
 let classBtn3 = document.querySelector(".class-btn3");
 let classBtn4 = document.querySelector(".class-btn4");
