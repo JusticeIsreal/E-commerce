@@ -65,7 +65,7 @@ $special-Color: #4c5eff;
   }
 }
 
-// PROJECTS BEGINS
+// CART BEGINS
 
 .cart {
   //   border: 2px solid red;
@@ -74,6 +74,7 @@ $special-Color: #4c5eff;
   margin-top: 4rem;
   padding: 10px;
 
+  //   individual cart container
   .cart-con {
     border: 2px solid rgba(65, 105, 225, 0.41);
     border-radius: 10px;
@@ -84,6 +85,7 @@ $special-Color: #4c5eff;
     padding: 5px;
     position: relative;
 
+    // cart img con
     .cart-img {
       border-radius: 10px;
       width: 60%;
@@ -94,6 +96,7 @@ $special-Color: #4c5eff;
         width: 100%;
         height: 100%;
       }
+      //   remove button
       button {
         position: absolute;
         bottom: 5px;
@@ -102,6 +105,7 @@ $special-Color: #4c5eff;
         border: 1px solid rgba(65, 105, 225, 0.41);
       }
     }
+    // product detail
     .cart-details {
       width: 40%;
     }
