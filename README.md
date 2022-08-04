@@ -25,4 +25,4 @@ In cart page You can increase quantity of product , also delete from cart.
 
 
 
-https://resonant-kulfi-51e080.netlify.app/pages/product
+justiceecom.netlify.app
